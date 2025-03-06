@@ -1,0 +1,5 @@
+=========
+36
+-chain-   0 th
+1  tvmgen_default_fused_nn_relu_abs_abs_cos_fast_exp_tan_sigmoid_sin,2.087164212705573e-12
+

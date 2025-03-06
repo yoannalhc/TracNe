@@ -1,0 +1,6 @@
+=========
+52
+-chain-   0 th
+20  tvmgen_default_fused_negative_reshape_maximum_nn_prelu_fast_tanh,1.9584565996836242e-07
+21  tvmgen_default_fused_nn_adaptive_avg_pool1d,1.9584565996836242e-07
+

@@ -1,0 +1,221 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "pznewx",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                4,
+                3
+            ]
+        },
+        {
+            "op": "param",
+            "name": "pznewy",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                4,
+                3
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_abs_sqrt_divide_sum",
+            "name": "tvmgen_default_fused_abs_sqrt_divide_sum",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "2",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_abs_sqrt_divide_sum",
+                "hash": "f9a477ddd5f8ba55",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "pznewy",
+                "pznewx"
+            ],
+            "shape": [
+                4
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_tan_nn_relu_round_ceil_fast_exp_abs_sigmoid",
+            "name": "tvmgen_default_fused_tan_nn_relu_round_ceil_fast_exp_abs_sigmoid",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_tan_nn_relu_round_ceil_fast_exp_abs_sigmoid",
+                "hash": "85a93a0077fcf904",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_abs_sqrt_divide_sum"
+            ],
+            "shape": [
+                4
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_transpose_nn_relu_reshape_cos_tan_fast_tanh",
+            "name": "tvmgen_default_fused_transpose_nn_relu_reshape_cos_tan_fast_tanh",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_transpose_nn_relu_reshape_cos_tan_fast_tanh",
+                "hash": "194986c107534b3a",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_tan_nn_relu_round_ceil_fast_exp_abs_sigmoid"
+            ],
+            "shape": [
+                4,
+                1,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_nn_max_pool1d_round",
+            "name": "tvmgen_default_fused_nn_max_pool1d_round",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_nn_max_pool1d_round",
+                "out_layout": "",
+                "layout": "NCW",
+                "hash": "a52f21e587548d27",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_transpose_nn_relu_reshape_cos_tan_fast_tanh"
+            ],
+            "shape": [
+                4,
+                1,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_fast_tanh_reshape_nn_batch_flatten_negative_subtract_expand_dims_multiply__1cd43eaa4c884914_",
+            "name": "tvmgen_default_fused_fast_tanh_reshape_nn_batch_flatten_negative_subtract_expand_dims_multiply__1cd43eaa4c884914_",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "2",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_fast_tanh_reshape_nn_batch_flatten_negative_subtract_expand_dims_multiply__1cd43eaa4c884914_",
+                "hash": "19c2e4ddd9cc63bd",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_tan_nn_relu_round_ceil_fast_exp_abs_sigmoid",
+                "tvmgen_default_fused_nn_max_pool1d_round"
+            ],
+            "shape": [
+                4,
+                4,
+                1
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0,
+        1
+    ],
+    "heads": [
+        [
+            6,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2,
+                3,
+                2,
+                4,
+                2
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    4,
+                    3
+                ],
+                [
+                    4,
+                    3
+                ],
+                [
+                    4
+                ],
+                [
+                    4
+                ],
+                [
+                    4,
+                    1,
+                    1
+                ],
+                [
+                    4,
+                    1,
+                    1
+                ],
+                [
+                    4,
+                    4,
+                    1
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+    ]
+}

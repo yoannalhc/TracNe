@@ -1,0 +1,6 @@
+=========
+16
+-chain-   0 th
+2  tvmgen_default_fused_nn_fast_softmax_nn_relu,1.6763806016907348e-08
+3  tvmgen_default_fused_nn_avg_pool1d,1.6763806016907348e-08
+

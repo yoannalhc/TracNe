@@ -1,0 +1,68 @@
+{
+    "0": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "x0",
+            "opindex": 0,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "x0____topo-index:0____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "x0____topo-index:0____output-num:0"
+                ]
+            }
+        },
+        "nodename": "x0",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 0
+    },
+    "1": {
+        "errormessage": {
+            "error": 1.1156618907641778e-07,
+            "hash": "7683841ca18a53a6",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_round_cos_sin_fast_exp_abs_sin_fast_tanh_fast_exp",
+            "opindex": 1,
+            "params": {
+                "opt_params": [
+                    "[2.137015 2.137015 2.137015 2.137015 2.137015 2.137015 2.137015]"
+                ],
+                "unopt_params": [
+                    "[2.1370149 2.1370149 2.1370149 2.1370149 2.1370149 2.1370149 2.1370149]"
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_round_cos_sin_fast_exp_abs_sin_fast_tanh_fast_exp____topo-index:1____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_round_cos_sin_exp_abs_sin_tanh_exp____topo-index:1____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_round_cos_sin_fast_exp_abs_sin_fast_tanh_fast_exp",
+        "pre_topoindex": [
+            0
+        ],
+        "topoindex": 1
+    }
+}

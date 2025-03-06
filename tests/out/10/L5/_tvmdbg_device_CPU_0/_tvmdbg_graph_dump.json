@@ -1,0 +1,273 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "x",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                2,
+                4,
+                40,
+                10,
+                10
+            ]
+        },
+        {
+            "op": "param",
+            "name": "weight",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                2,
+                4,
+                3,
+                3,
+                3
+            ]
+        },
+        {
+            "op": "param",
+            "name": "in_bias",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                4,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                4,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_nn_relu_divide_add",
+            "name": "tvmgen_default_fused_nn_relu_divide_add",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "3",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_nn_relu_divide_add",
+                "hash": "c203e77a1a6a5aa2",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "x",
+                "in_bias",
+                "p0"
+            ],
+            "shape": [
+                2,
+                4,
+                40,
+                10,
+                10
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p1",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                4,
+                1,
+                1,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_multiply",
+            "name": "tvmgen_default_fused_multiply",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "2",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_multiply",
+                "hash": "49e4abc5aa419f27",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "weight",
+                "p1"
+            ],
+            "shape": [
+                2,
+                4,
+                3,
+                3,
+                3
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_nn_conv3d",
+            "name": "tvmgen_default_fused_nn_conv3d",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "2",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_nn_conv3d",
+                "out_layout": "",
+                "data_layout": "NCDHW",
+                "kernel_layout": "OIDHW",
+                "hash": "0aeb3c46e0c8b532",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_nn_relu_divide_add",
+                "tvmgen_default_fused_multiply"
+            ],
+            "shape": [
+                2,
+                2,
+                40,
+                10,
+                10
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0,
+        1,
+        2,
+        3,
+        5
+    ],
+    "heads": [
+        [
+            7,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    2,
+                    4,
+                    40,
+                    10,
+                    10
+                ],
+                [
+                    2,
+                    4,
+                    3,
+                    3,
+                    3
+                ],
+                [
+                    4,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    4,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    4,
+                    40,
+                    10,
+                    10
+                ],
+                [
+                    4,
+                    1,
+                    1,
+                    1
+                ],
+                [
+                    2,
+                    4,
+                    3,
+                    3,
+                    3
+                ],
+                [
+                    2,
+                    2,
+                    40,
+                    10,
+                    10
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+    ]
+}

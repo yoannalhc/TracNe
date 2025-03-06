@@ -1,0 +1,68 @@
+{
+    "0": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "x0",
+            "opindex": 0,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "x0____topo-index:0____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "x0____topo-index:0____output-num:0"
+                ]
+            }
+        },
+        "nodename": "x0",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 0
+    },
+    "1": {
+        "errormessage": {
+            "error": 2.087164212705573e-12,
+            "hash": "7184f240d43103d2",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_nn_relu_abs_abs_cos_fast_exp_tan_sigmoid_sin",
+            "opindex": 1,
+            "params": {
+                "opt_params": [
+                    "[3.7947622e-01 5.7757849e-01 7.9999644e-01 8.3197522e-01 2.4856945e-07\n 5.6584436e-01]"
+                ],
+                "unopt_params": [
+                    "[3.7947622e-01 5.7757849e-01 7.9999644e-01 8.3197522e-01 2.4857630e-07\n 5.6584436e-01]"
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_nn_relu_abs_abs_cos_fast_exp_tan_sigmoid_sin____topo-index:1____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_nn_relu_abs_abs_cos_exp_tan_sigmoid_sin____topo-index:1____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_nn_relu_abs_abs_cos_fast_exp_tan_sigmoid_sin",
+        "pre_topoindex": [
+            0
+        ],
+        "topoindex": 1
+    }
+}

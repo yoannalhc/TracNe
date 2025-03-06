@@ -1,0 +1,314 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "x0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float16"
+            },
+            "shape": [
+                16,
+                12
+            ]
+        },
+        {
+            "op": "param",
+            "name": "x1",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float16"
+            },
+            "shape": [
+                12
+            ]
+        },
+        {
+            "op": "param",
+            "name": "x2",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float16"
+            },
+            "shape": [
+                12
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_mean",
+            "name": "tvmgen_default_fused_mean",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_mean",
+                "hash": "987ef533cddb84dd",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "x0"
+            ],
+            "shape": [
+                16,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_multiply_cos_tanh",
+            "name": "tvmgen_default_fused_multiply_cos_tanh",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "2",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_multiply_cos_tanh",
+                "hash": "8e1345d36651ddb9",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_mean",
+                "x0"
+            ],
+            "shape": [
+                16,
+                12
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_tan_reshape",
+            "name": "tvmgen_default_fused_tan_reshape",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_tan_reshape",
+                "hash": "ae99c7de8c450924",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_multiply_cos_tanh"
+            ],
+            "shape": [
+                16,
+                2,
+                6
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_mean_1",
+            "name": "tvmgen_default_fused_mean_1",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_mean_1",
+                "hash": "ae2868d816484485",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_tan_reshape"
+            ],
+            "shape": [
+                16,
+                2,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_variance",
+            "name": "tvmgen_default_fused_variance",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "2",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_variance",
+                "hash": "f8e4ae966bda7b35",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_tan_reshape",
+                "tvmgen_default_fused_mean_1"
+            ],
+            "shape": [
+                16,
+                2,
+                1
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float16"
+            },
+            "shape": []
+        },
+        {
+            "op": "tvmgen_default_fused_subtract_add_sqrt_divide_reshape_multiply_add",
+            "name": "tvmgen_default_fused_subtract_add_sqrt_divide_reshape_multiply_add",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "6",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_subtract_add_sqrt_divide_reshape_multiply_add",
+                "hash": "73a6d63a8be002e5",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_tan_reshape",
+                "tvmgen_default_fused_mean_1",
+                "tvmgen_default_fused_variance",
+                "p0",
+                "x1",
+                "tvmgen_default_fused_multiply_cos_tanh"
+            ],
+            "shape": [
+                16,
+                12
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_nn_softmax",
+            "name": "tvmgen_default_fused_nn_softmax",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_nn_softmax",
+                "hash": "ab2b900c5b6dee9e",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_subtract_add_sqrt_divide_reshape_multiply_add"
+            ],
+            "shape": [
+                16,
+                12
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0,
+        1,
+        2,
+        8
+    ],
+    "heads": [
+        [
+            10,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2,
+                3,
+                4,
+                3,
+                5,
+                6,
+                7,
+                8,
+                3
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    16,
+                    12
+                ],
+                [
+                    12
+                ],
+                [
+                    12
+                ],
+                [
+                    16,
+                    1
+                ],
+                [
+                    16,
+                    12
+                ],
+                [
+                    16,
+                    2,
+                    6
+                ],
+                [
+                    16,
+                    2,
+                    1
+                ],
+                [
+                    16,
+                    2,
+                    1
+                ],
+                [],
+                [
+                    16,
+                    12
+                ],
+                [
+                    16,
+                    12
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+    ]
+}

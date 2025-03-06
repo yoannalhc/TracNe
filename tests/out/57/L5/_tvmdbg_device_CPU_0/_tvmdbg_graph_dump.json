@@ -1,0 +1,224 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "x0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                6
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_cos_trunc",
+            "name": "tvmgen_default_fused_cos_trunc",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_cos_trunc",
+                "hash": "e8bc6623fa3cd137",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "x0"
+            ],
+            "shape": [
+                6
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_floor_nn_relu_fast_exp_abs_round",
+            "name": "tvmgen_default_fused_floor_nn_relu_fast_exp_abs_round",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_floor_nn_relu_fast_exp_abs_round",
+                "hash": "a27003b039d2f0d6",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_cos_trunc"
+            ],
+            "shape": [
+                6
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_floor_nn_leaky_relu_sigmoid_negative_negative_sigmoid_ceil_round_cos_sigmo_ca62bf5f1a4a82fe_",
+            "name": "tvmgen_default_fused_floor_nn_leaky_relu_sigmoid_negative_negative_sigmoid_ceil_round_cos_sigmo_ca62bf5f1a4a82fe_",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_floor_nn_leaky_relu_sigmoid_negative_negative_sigmoid_ceil_round_cos_sigmo_ca62bf5f1a4a82fe_",
+                "hash": "b664f9e4a746bff9",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_floor_nn_relu_fast_exp_abs_round"
+            ],
+            "shape": [
+                6
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_sin_transpose_nn_leaky_relu_ceil_fast_tanh_round_nn_leaky_relu_trunc_negat_4b052bf80e2afbb5_",
+            "name": "tvmgen_default_fused_sin_transpose_nn_leaky_relu_ceil_fast_tanh_round_nn_leaky_relu_trunc_negat_4b052bf80e2afbb5_",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_sin_transpose_nn_leaky_relu_ceil_fast_tanh_round_nn_leaky_relu_trunc_negat_4b052bf80e2afbb5_",
+                "hash": "4176285269f933b5",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_floor_nn_relu_fast_exp_abs_round"
+            ],
+            "shape": [
+                6,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_round_abs_trunc_round_cos_abs",
+            "name": "tvmgen_default_fused_round_abs_trunc_round_cos_abs",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_round_abs_trunc_round_cos_abs",
+                "hash": "0bb17fed2ab19ba7",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_cos_trunc"
+            ],
+            "shape": [
+                6
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_ceil_fast_exp_fast_exp_round_ceil_transpose_cos",
+            "name": "tvmgen_default_fused_ceil_fast_exp_fast_exp_round_ceil_transpose_cos",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_ceil_fast_exp_fast_exp_round_ceil_transpose_cos",
+                "hash": "16c970987ff24c52",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "x0"
+            ],
+            "shape": [
+                6
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0
+    ],
+    "heads": [
+        [
+            3,
+            0,
+            0
+        ],
+        [
+            4,
+            0,
+            0
+        ],
+        [
+            5,
+            0,
+            0
+        ],
+        [
+            6,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2,
+                3,
+                4,
+                2,
+                1
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    6
+                ],
+                [
+                    6
+                ],
+                [
+                    6
+                ],
+                [
+                    6
+                ],
+                [
+                    6,
+                    1
+                ],
+                [
+                    6
+                ],
+                [
+                    6
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+    ]
+}

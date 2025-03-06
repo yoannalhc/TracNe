@@ -1,0 +1,5 @@
+=========
+26
+-chain-   3 th
+16  tvmgen_default_fused_transpose_fast_tanh_fast_exp_fast_tanh,1.8387846571992419e-07
+

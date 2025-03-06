@@ -1,0 +1,251 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "x0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float16"
+            },
+            "shape": [
+                13,
+                13
+            ]
+        },
+        {
+            "op": "param",
+            "name": "x1",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float16"
+            },
+            "shape": [
+                26
+            ]
+        },
+        {
+            "op": "param",
+            "name": "x2",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float16"
+            },
+            "shape": [
+                26
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_concatenate_nn_relu_negative_add_nn_batch_flatten",
+            "name": "tvmgen_default_fused_concatenate_nn_relu_negative_add_nn_batch_flatten",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_concatenate_nn_relu_negative_add_nn_batch_flatten",
+                "hash": "4db1c94316008a39",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "x0"
+            ],
+            "shape": [
+                13,
+                26
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_nn_fast_softmax",
+            "name": "tvmgen_default_fused_nn_fast_softmax",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_nn_fast_softmax",
+                "hash": "68051c186c0e3d1c",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_concatenate_nn_relu_negative_add_nn_batch_flatten"
+            ],
+            "shape": [
+                13,
+                26
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_mean",
+            "name": "tvmgen_default_fused_mean",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_mean",
+                "hash": "c86a1822db93e182",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_nn_fast_softmax"
+            ],
+            "shape": [
+                13,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_variance",
+            "name": "tvmgen_default_fused_variance",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "2",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_variance",
+                "hash": "4794e79e913b0c92",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_nn_fast_softmax",
+                "tvmgen_default_fused_mean"
+            ],
+            "shape": [
+                13,
+                1
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float16"
+            },
+            "shape": []
+        },
+        {
+            "op": "tvmgen_default_fused_subtract_add_sqrt_divide_multiply_add_min",
+            "name": "tvmgen_default_fused_subtract_add_sqrt_divide_multiply_add_min",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "6",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_subtract_add_sqrt_divide_multiply_add_min",
+                "hash": "c84179b4fc82b37e",
+                "T": "type: float16"
+            },
+            "inputs": [
+                "tvmgen_default_fused_nn_fast_softmax",
+                "tvmgen_default_fused_mean",
+                "tvmgen_default_fused_variance",
+                "p0",
+                "x1",
+                "x2"
+            ],
+            "shape": [
+                13
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0,
+        1,
+        2,
+        7
+    ],
+    "heads": [
+        [
+            8,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16",
+                "float16"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    13,
+                    13
+                ],
+                [
+                    26
+                ],
+                [
+                    26
+                ],
+                [
+                    13,
+                    26
+                ],
+                [
+                    13,
+                    26
+                ],
+                [
+                    13,
+                    1
+                ],
+                [
+                    13,
+                    1
+                ],
+                [],
+                [
+                    13
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+    ]
+}

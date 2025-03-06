@@ -1,0 +1,7 @@
+=========
+15
+-chain-   0 th
+4  tvmgen_default_fused_nn_relu_divide_add,0.2305147644150092
+6  tvmgen_default_fused_multiply,-1
+7  tvmgen_default_fused_nn_conv3d,9.930601477409257e-08
+

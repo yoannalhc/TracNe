@@ -1,0 +1,8 @@
+=========
+50
+-chain-   0 th
+8  tvmgen_default_fused_nn_fast_softmax_minimum,1.3411045495637993e-07
+9  tvmgen_default_fused_mean,1.7881393961989505e-07
+10  tvmgen_default_fused_variance,3.5284435727786996e-07
+11  tvmgen_default_fused_subtract_add_sqrt_divide_negative,1.2648045192141528e-07
+

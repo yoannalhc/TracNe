@@ -1,0 +1,150 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "pzx",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                64,
+                2,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_sqrt_divide_cos_nn_relu_multiply_floor_tan_maximum_strided_slice",
+            "name": "tvmgen_default_fused_sqrt_divide_cos_nn_relu_multiply_floor_tan_maximum_strided_slice",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_sqrt_divide_cos_nn_relu_multiply_floor_tan_maximum_strided_slice",
+                "hash": "2179daf365507ee1",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "pzx"
+            ],
+            "shape": [
+                64,
+                2,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_nn_softmax_nn_relu",
+            "name": "tvmgen_default_fused_nn_softmax_nn_relu",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_nn_softmax_nn_relu",
+                "hash": "ebf7e09db5053f8d",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_sqrt_divide_cos_nn_relu_multiply_floor_tan_maximum_strided_slice"
+            ],
+            "shape": [
+                64,
+                2,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_nn_avg_pool1d",
+            "name": "tvmgen_default_fused_nn_avg_pool1d",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_nn_avg_pool1d",
+                "out_layout": "",
+                "layout": "NCW",
+                "hash": "2dd18e902c4ae1cf",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_nn_softmax_nn_relu"
+            ],
+            "shape": [
+                64,
+                2,
+                1
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0
+    ],
+    "heads": [
+        [
+            3,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32",
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2,
+                1
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    64,
+                    2,
+                    1
+                ],
+                [
+                    64,
+                    2,
+                    1
+                ],
+                [
+                    64,
+                    2,
+                    1
+                ],
+                [
+                    64,
+                    2,
+                    1
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4
+    ]
+}

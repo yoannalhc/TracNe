@@ -1,0 +1,109 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "x0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                15,
+                10
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_sigmoid_maximum_expand_dims_exp_trunc_mean",
+            "name": "tvmgen_default_fused_sigmoid_maximum_expand_dims_exp_trunc_mean",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_sigmoid_maximum_expand_dims_exp_trunc_mean",
+                "hash": "74c93451ccf9ec4c",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "x0"
+            ],
+            "shape": [
+                15
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_cos_tanh",
+            "name": "tvmgen_default_fused_cos_tanh",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_cos_tanh",
+                "hash": "66f80fe476a2eb81",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_sigmoid_maximum_expand_dims_exp_trunc_mean"
+            ],
+            "shape": [
+                15
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0
+    ],
+    "heads": [
+        [
+            2,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    15,
+                    10
+                ],
+                [
+                    15
+                ],
+                [
+                    15
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3
+    ]
+}

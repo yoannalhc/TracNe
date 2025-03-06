@@ -1,0 +1,68 @@
+{
+    "0": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "x0",
+            "opindex": 0,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "x0____topo-index:0____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "x0____topo-index:0____output-num:0"
+                ]
+            }
+        },
+        "nodename": "x0",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 0
+    },
+    "1": {
+        "errormessage": {
+            "error": 1.8094233315970359e-07,
+            "hash": "eea2b4f646e2eb43",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_trunc_abs_cos_sigmoid_transpose_fast_tanh_nn_relu_abs",
+            "opindex": 1,
+            "params": {
+                "opt_params": [
+                    "[0.3294123 0.3294123 0.3294123 0.3294123 0.3294123 0.3294123]"
+                ],
+                "unopt_params": [
+                    "[0.32941237 0.32941237 0.32941237 0.32941237 0.32941237 0.32941237]"
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_trunc_abs_cos_sigmoid_transpose_fast_tanh_nn_relu_abs____topo-index:1____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_trunc_abs_cos_sigmoid_transpose_tanh_nn_relu_abs____topo-index:1____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_trunc_abs_cos_sigmoid_transpose_fast_tanh_nn_relu_abs",
+        "pre_topoindex": [
+            0
+        ],
+        "topoindex": 1
+    }
+}

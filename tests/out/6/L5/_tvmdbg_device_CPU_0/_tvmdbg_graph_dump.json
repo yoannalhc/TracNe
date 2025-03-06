@@ -1,0 +1,90 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "x",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                64,
+                2,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_sqrt_divide",
+            "name": "tvmgen_default_fused_sqrt_divide",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_sqrt_divide",
+                "hash": "b5227c3e20900236",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "x"
+            ],
+            "shape": [
+                64,
+                2,
+                1
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0
+    ],
+    "heads": [
+        [
+            1,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    64,
+                    2,
+                    1
+                ],
+                [
+                    64,
+                    2,
+                    1
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2
+    ]
+}

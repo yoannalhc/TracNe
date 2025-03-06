@@ -1,0 +1,5 @@
+=========
+28
+-chain-   0 th
+14  tvmgen_default_fused_nn_fast_softmax,8.131609060020332e-08
+

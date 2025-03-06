@@ -1,0 +1,12 @@
+=========
+46
+-chain-   0 th
+18  tvmgen_default_fused_nn_relu_trunc_ceil_tan_multiply_add,-1
+26  tvmgen_default_fused_subtract_add_sqrt_divide_reshape_add_sqrt_divide_multiply_multiply_negativ_3340d138fbcdba7d,1.1834998556629928e-07
+27  tvmgen_default_fused_mean_2,1.1834998557321067e-07
+28  tvmgen_default_fused_variance_2,7.78301497042616e-07
+29  tvmgen_default_fused_subtract_add_sqrt_divide_expand_dims_multiply,4.1179865451783894e-05
+30  tvmgen_default_fused_mean_3,4.1111000612300703e-05
+31  tvmgen_default_fused_variance_3,2.8671456624607565e-05
+32  tvmgen_default_fused_subtract_add_sqrt_divide_expand_dims_multiply_1,4.607737874346661e-05
+

@@ -1,0 +1,5 @@
+=========
+32
+-chain-   0 th
+4  tvmgen_default_fused_abs_nn_prelu_divide_maximum_fast_tanh,1.425611603014531e-07
+

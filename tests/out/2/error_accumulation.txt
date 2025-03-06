@@ -1,0 +1,18 @@
+=========
+2
+-chain-   0 th
+6  tvmgen_default_fused_layout_transform,-1
+8  tvmgen_default_fused_expand_dims_squeeze_expand_dims_multiply_layout_transform,-1
+9  tvmgen_default_fused_negative_multiply_add_expand_dims_expand_dims_layout_transform,-1
+10  tvmgen_default_fused_nn_contrib_conv2d_NCHWc_add_nn_relu,-1
+11  tvmgen_default_fused_layout_transform_1,1.130321640780784e-07
+
+=========
+2
+-chain-   0 th
+6  tvmgen_default_fused_layout_transform,-1
+8  tvmgen_default_fused_expand_dims_squeeze_expand_dims_multiply_layout_transform,-1
+9  tvmgen_default_fused_negative_multiply_add_expand_dims_expand_dims_layout_transform,-1
+10  tvmgen_default_fused_nn_contrib_conv2d_NCHWc_add_nn_relu,-1
+11  tvmgen_default_fused_layout_transform_1,1.130321640780784e-07
+

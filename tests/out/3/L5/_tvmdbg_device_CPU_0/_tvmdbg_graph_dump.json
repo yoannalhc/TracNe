@@ -1,0 +1,142 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "x",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                16
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                16
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p1",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                16
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p2",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                16
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_add_multiply_add",
+            "name": "tvmgen_default_fused_add_multiply_add",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "4",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_add_multiply_add",
+                "hash": "5ec222819bf77577",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "p0",
+                "x",
+                "p1",
+                "p2"
+            ],
+            "shape": [
+                16
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0,
+        1,
+        2,
+        3
+    ],
+    "heads": [
+        [
+            4,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    16
+                ],
+                [
+                    16
+                ],
+                [
+                    16
+                ],
+                [
+                    16
+                ],
+                [
+                    16
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+    ]
+}

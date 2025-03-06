@@ -1,0 +1,11 @@
+=========
+20
+-chain-   0 th
+6  tvmgen_default_fused_nn_relu_divide_add,0.5805980510069835
+8  tvmgen_default_fused_multiply,-1
+9  tvmgen_default_fused_nn_conv3d,1.13518923860128e-07
+10  tvmgen_default_fused_sum,1.462201434883887e-07
+11  tvmgen_default_fused_ceil_subtract,0.00014988569602339478
+13  tvmgen_default_fused_min,0.00012412080927776738
+14  tvmgen_default_fused_add_divide_tan_subtract_tan_nn_prelu,1.3102680425683337
+

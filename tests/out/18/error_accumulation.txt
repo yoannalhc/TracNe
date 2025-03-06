@@ -1,0 +1,5 @@
+=========
+18
+-chain-   0 th
+4  tvmgen_default_fused_add_multiply_add_ceil_abs_sigmoid_transpose_ceil_nn_relu_abs_tan_fast_tanh_441fa3051e35b26c,1.6476221906352337e-07
+

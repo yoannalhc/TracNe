@@ -1,0 +1,162 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "x0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                20,
+                15
+            ]
+        },
+        {
+            "op": "param",
+            "name": "x1",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                1
+            ]
+        },
+        {
+            "op": "__nop",
+            "name": "reshape_nop",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "__nop",
+                "hash": "af2ba60967857e78",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "x0"
+            ],
+            "shape": [
+                20,
+                15,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_sum",
+            "name": "tvmgen_default_fused_sum",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "1",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_sum",
+                "hash": "24d7a9a5449019c1",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "reshape_nop"
+            ],
+            "shape": [
+                20,
+                1
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_abs_nn_prelu_divide_maximum_tanh",
+            "name": "tvmgen_default_fused_abs_nn_prelu_divide_maximum_tanh",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "2",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_abs_nn_prelu_divide_maximum_tanh",
+                "hash": "c8818aa91b6f56ba",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "tvmgen_default_fused_sum",
+                "x1"
+            ],
+            "shape": [
+                20,
+                1
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0,
+        1
+    ],
+    "heads": [
+        [
+            4,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                0,
+                2,
+                3
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    20,
+                    15
+                ],
+                [
+                    1
+                ],
+                [
+                    20,
+                    15,
+                    1
+                ],
+                [
+                    20,
+                    1
+                ],
+                [
+                    20,
+                    1
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+    ]
+}

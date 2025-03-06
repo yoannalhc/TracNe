@@ -1,0 +1,1073 @@
+{
+    "0": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "pzx",
+            "opindex": 0,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "pzx____topo-index:0____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "pzx____topo-index:0____output-num:0"
+                ]
+            }
+        },
+        "nodename": "pzx",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 0
+    },
+    "1": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "pzweight",
+            "opindex": 1,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "pzweight____topo-index:1____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "pzweight____topo-index:1____output-num:0"
+                ]
+            }
+        },
+        "nodename": "pzweight",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 1
+    },
+    "2": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "pzin_bias",
+            "opindex": 2,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "pzin_bias____topo-index:2____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "pzin_bias____topo-index:2____output-num:0"
+                ]
+            }
+        },
+        "nodename": "pzin_bias",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 2
+    },
+    "3": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "px1",
+            "opindex": 3,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "px1____topo-index:3____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "px1____topo-index:3____output-num:0"
+                ]
+            }
+        },
+        "nodename": "px1",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 3
+    },
+    "4": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "px2",
+            "opindex": 4,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "px2____topo-index:4____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "px2____topo-index:4____output-num:0"
+                ]
+            }
+        },
+        "nodename": "px2",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 4
+    },
+    "5": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "px3",
+            "opindex": 5,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "px3____topo-index:5____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "px3____topo-index:5____output-num:0"
+                ]
+            }
+        },
+        "nodename": "px3",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 5
+    },
+    "6": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "px4",
+            "opindex": 6,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "px4____topo-index:6____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "px4____topo-index:6____output-num:0"
+                ]
+            }
+        },
+        "nodename": "px4",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 6
+    },
+    "7": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "px5",
+            "opindex": 7,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "px5____topo-index:7____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "px5____topo-index:7____output-num:0"
+                ]
+            }
+        },
+        "nodename": "px5",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 7
+    },
+    "8": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "px6",
+            "opindex": 8,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "px6____topo-index:8____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "px6____topo-index:8____output-num:0"
+                ]
+            }
+        },
+        "nodename": "px6",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 8
+    },
+    "9": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "px7",
+            "opindex": 9,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "px7____topo-index:9____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "px7____topo-index:9____output-num:0"
+                ]
+            }
+        },
+        "nodename": "px7",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 9
+    },
+    "10": {
+        "errormessage": {
+            "error": -1.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "p0",
+            "opindex": 10,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "p0____topo-index:10____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "p0____topo-index:10____output-num:0"
+                ]
+            }
+        },
+        "nodename": "p0",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 10
+    },
+    "11": {
+        "errormessage": {
+            "error": -1,
+            "hash": "6311b209ee0e8190",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_multiply_layout_transform",
+            "opindex": -1,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    ""
+                ],
+                "unopt_params_keys": [
+                    ""
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_multiply_layout_transform",
+        "pre_topoindex": [
+            1,
+            10
+        ],
+        "topoindex": 11
+    },
+    "12": {
+        "errormessage": {
+            "error": -1,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "p1",
+            "opindex": -1,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    ""
+                ],
+                "unopt_params_keys": [
+                    ""
+                ]
+            }
+        },
+        "nodename": "p1",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 12
+    },
+    "13": {
+        "errormessage": {
+            "error": 7.585312284590965e-08,
+            "hash": "49193a2783423cea",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_nn_contrib_dense_pack_multiply_expand_dims_add_nn_relu",
+            "opindex": 13,
+            "params": {
+                "opt_params": [
+                    "[[0.        0.32506   0.4607301]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]\n [0.        0.        0.       ]]"
+                ],
+                "unopt_params": [
+                    "[[0.         0.32506004 0.46073014]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]\n [0.         0.         0.        ]]"
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_nn_contrib_dense_pack_multiply_expand_dims_add_nn_relu____topo-index:13____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_nn_dense_add_nn_relu_multiply____topo-index:11____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_nn_contrib_dense_pack_multiply_expand_dims_add_nn_relu",
+        "pre_topoindex": [
+            0,
+            11,
+            2,
+            12
+        ],
+        "topoindex": 13
+    },
+    "14": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "c0e656f98d622731",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_negative_divide_nn_relu_sigmoid_add_concatenate",
+            "opindex": 14,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_negative_divide_nn_relu_sigmoid_add_concatenate____topo-index:14____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_negative_divide_nn_relu_sigmoid_add_concatenate____topo-index:12____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_negative_divide_nn_relu_sigmoid_add_concatenate",
+        "pre_topoindex": [
+            13
+        ],
+        "topoindex": 14
+    },
+    "15": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "303b4987f5423664",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_nn_fast_softmax_sin",
+            "opindex": 15,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_nn_fast_softmax_sin____topo-index:15____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_nn_softmax_sin____topo-index:13____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_nn_fast_softmax_sin",
+        "pre_topoindex": [
+            14
+        ],
+        "topoindex": 15
+    },
+    "16": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "797b3671e8b59b52",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "reshape_nop",
+            "opindex": 16,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "reshape_nop____topo-index:16____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "reshape_nop____topo-index:14____output-num:0"
+                ]
+            }
+        },
+        "nodename": "reshape_nop",
+        "pre_topoindex": [
+            15
+        ],
+        "topoindex": 16
+    },
+    "17": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "c6f28f5359b731fd",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_max",
+            "opindex": 17,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_max____topo-index:17____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_max____topo-index:15____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_max",
+        "pre_topoindex": [
+            16
+        ],
+        "topoindex": 17
+    },
+    "18": {
+        "errormessage": {
+            "error": 1.1778814896885587e-06,
+            "hash": "84eccc309f42a48d",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_sigmoid_nn_relu_sigmoid_cos_tan_fast_exp_sin",
+            "opindex": 18,
+            "params": {
+                "opt_params": [
+                    "[-0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762 -0.189762\n -0.189762]"
+                ],
+                "unopt_params": [
+                    "[-0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222 -0.18976222\n -0.18976222 -0.18976222 -0.18976222 -0.18976222]"
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_sigmoid_nn_relu_sigmoid_cos_tan_fast_exp_sin____topo-index:18____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_sigmoid_nn_relu_sigmoid_cos_tan_exp_sin____topo-index:16____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_sigmoid_nn_relu_sigmoid_cos_tan_fast_exp_sin",
+        "pre_topoindex": [
+            17
+        ],
+        "topoindex": 18
+    },
+    "19": {
+        "errormessage": {
+            "error": -1,
+            "hash": "c4dba4a15d52e5a0",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_sin_reshape",
+            "opindex": -1,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    ""
+                ],
+                "unopt_params_keys": [
+                    ""
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_sin_reshape",
+        "pre_topoindex": [
+            17
+        ],
+        "topoindex": 19
+    },
+    "20": {
+        "errormessage": {
+            "error": -1,
+            "hash": "eccb3041c9cca53f",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_layout_transform",
+            "opindex": -1,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    ""
+                ],
+                "unopt_params_keys": [
+                    ""
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_layout_transform",
+        "pre_topoindex": [
+            3
+        ],
+        "topoindex": 20
+    },
+    "21": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "65512c21e7d91cab",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_nn_contrib_dense_pack_abs_abs",
+            "opindex": 21,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_nn_contrib_dense_pack_abs_abs____topo-index:21____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_nn_dense_abs_abs____topo-index:18____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_nn_contrib_dense_pack_abs_abs",
+        "pre_topoindex": [
+            19,
+            20
+        ],
+        "topoindex": 21
+    },
+    "22": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "a5827bb4c1a239bd",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_add",
+            "opindex": 22,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_add____topo-index:22____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_nn_bias_add____topo-index:19____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_add",
+        "pre_topoindex": [
+            21,
+            9
+        ],
+        "topoindex": 22
+    },
+    "23": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "9e68f00b7b357188",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_mean",
+            "opindex": 23,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_mean____topo-index:23____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_mean____topo-index:20____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_mean",
+        "pre_topoindex": [
+            21
+        ],
+        "topoindex": 23
+    },
+    "24": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "44313a229d4ac329",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_variance",
+            "opindex": 24,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_variance____topo-index:24____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_variance____topo-index:21____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_variance",
+        "pre_topoindex": [
+            21,
+            23
+        ],
+        "topoindex": 24
+    },
+    "25": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "ac0cef0aa0b6f17c",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_subtract_add_sqrt_divide_multiply_nn_batch_flatten_negative_split",
+            "opindex": 25,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_subtract_add_sqrt_divide_multiply_nn_batch_flatten_negative_split____topo-index:25____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_subtract_add_sqrt_divide_multiply_nn_batch_flatten_negative_split____topo-index:22____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_subtract_add_sqrt_divide_multiply_nn_batch_flatten_negative_split",
+        "pre_topoindex": [
+            21,
+            23,
+            24,
+            4
+        ],
+        "topoindex": 25
+    },
+    "26": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "9e68f00b7b357188",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_mean_1",
+            "opindex": 26,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_mean_1____topo-index:26____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_mean_1____topo-index:23____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_mean_1",
+        "pre_topoindex": [
+            25
+        ],
+        "topoindex": 26
+    },
+    "27": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "44313a229d4ac329",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_variance_1",
+            "opindex": 27,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_variance_1____topo-index:27____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_variance_1____topo-index:24____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_variance_1",
+        "pre_topoindex": [
+            25,
+            26
+        ],
+        "topoindex": 27
+    },
+    "28": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "26a24b092ecbbd4f",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_subtract_add_sqrt_divide",
+            "opindex": 28,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_subtract_add_sqrt_divide____topo-index:28____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_subtract_add_sqrt_divide_multiply____topo-index:25____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_subtract_add_sqrt_divide",
+        "pre_topoindex": [
+            25,
+            26,
+            27
+        ],
+        "topoindex": 28
+    },
+    "29": {
+        "errormessage": {
+            "error": -1,
+            "hash": "9ff0577477cc3bc0",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_multiply_layout_transform_1",
+            "opindex": -1,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    ""
+                ],
+                "unopt_params_keys": [
+                    ""
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_multiply_layout_transform_1",
+        "pre_topoindex": [
+            8,
+            6
+        ],
+        "topoindex": 29
+    },
+    "30": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "89c83fe3ddbecfc7",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_nn_contrib_dense_pack",
+            "opindex": 30,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_nn_contrib_dense_pack____topo-index:30____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_nn_dense____topo-index:26____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_nn_contrib_dense_pack",
+        "pre_topoindex": [
+            28,
+            29
+        ],
+        "topoindex": 30
+    },
+    "31": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "13fd3f67b40d7582",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_transpose",
+            "opindex": 31,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_transpose____topo-index:31____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_transpose____topo-index:27____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_transpose",
+        "pre_topoindex": [
+            30
+        ],
+        "topoindex": 31
+    }
+}

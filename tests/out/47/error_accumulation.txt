@@ -1,0 +1,8 @@
+=========
+47
+-chain-   0 th
+17  tvmgen_default_fused_nn_fast_softmax,2.1342792690967614e-09
+18  tvmgen_default_fused_nn_fast_softmax_nn_relu_sin_tan_fast_tanh,3.85909698474354e-07
+19  tvmgen_default_fused_max,5.317587729740186e-07
+20  tvmgen_default_fused_concatenate_tan_sin_fast_exp_nn_batch_flatten_subtract_divide_divide_fast__a2d819194415ac16,0.003155773173326709
+

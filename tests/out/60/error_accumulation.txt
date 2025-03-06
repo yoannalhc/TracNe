@@ -1,0 +1,14 @@
+=========
+60
+-chain-   0 th
+33  tvmgen_default_fused_fast_tanh_expand_dims_add_nn_relu_nn_relu,8.387352012857623e-08
+34  tvmgen_default_fused_mean,1.1357878666195795e-07
+35  tvmgen_default_fused_variance,1.5702595308764918e-07
+36  tvmgen_default_fused_subtract_add_sqrt_divide,-1
+37  tvmgen_default_fused_layout_transform_1,-1
+38  tvmgen_default_fused_nn_contrib_dense_pack_1,1.1982160259713722e-07
+
+-chain-   3 th
+56  tvmgen_default_fused_subtract_add_sqrt_divide_fast_exp,7.968403673379166e-09
+57  tvmgen_default_fused_nn_fast_softmax_1,3.710081696677084e-08
+

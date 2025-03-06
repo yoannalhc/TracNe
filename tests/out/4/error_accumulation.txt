@@ -1,0 +1,12 @@
+=========
+4
+-chain-   0 th
+4  tvmgen_default_fused_multiply_layout_transform,-1
+6  tvmgen_default_fused_nn_contrib_dense_pack_multiply_expand_dims_add_nn_relu,1.1020904855704383e-07
+
+=========
+4
+-chain-   0 th
+4  tvmgen_default_fused_multiply_layout_transform,-1
+6  tvmgen_default_fused_nn_contrib_dense_pack_multiply_expand_dims_add_nn_relu,1.1020904855704383e-07
+

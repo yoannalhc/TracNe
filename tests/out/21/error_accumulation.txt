@@ -1,0 +1,5 @@
+=========
+21
+-chain-   0 th
+6  tvmgen_default_fused_fast_tanh_reshape_nn_batch_flatten_negative_subtract_expand_dims_multiply__1cd43eaa4c884914,1.5657936508869959e-07
+

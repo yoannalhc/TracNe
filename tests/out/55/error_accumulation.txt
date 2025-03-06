@@ -1,0 +1,8 @@
+=========
+55
+-chain-   0 th
+21  tvmgen_default_fused_negative_sigmoid_transpose_expand_dims_negative_nn_batch_flatten_nn_prelu__4710648bf6e45a20,0.7650259246499836
+
+-chain-   1 th
+26  tvmgen_default_fused_fast_tanh_tan_transpose_sigmoid_floor_transpose_transpose_transpose_cos_fa_42628492714f59ad,7.826300477738101e-08
+

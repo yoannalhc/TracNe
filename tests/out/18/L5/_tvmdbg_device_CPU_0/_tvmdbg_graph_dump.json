@@ -1,0 +1,142 @@
+{
+    "nodes": [
+        {
+            "op": "param",
+            "name": "pzx",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                64
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p0",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                64
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p1",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                64
+            ]
+        },
+        {
+            "op": "param",
+            "name": "p2",
+            "inputs": [],
+            "attrs": {
+                "T": "type: float32"
+            },
+            "shape": [
+                64
+            ]
+        },
+        {
+            "op": "tvmgen_default_fused_add_multiply_add_ceil_abs_sigmoid_transpose_ceil_nn_relu_abs_tan_fast_tanh_441fa3051e35b26c_",
+            "name": "tvmgen_default_fused_add_multiply_add_ceil_abs_sigmoid_transpose_ceil_nn_relu_abs_tan_fast_tanh_441fa3051e35b26c_",
+            "attrs": {
+                "num_outputs": "1",
+                "num_inputs": "4",
+                "flatten_data": "0",
+                "func_name": "tvmgen_default_fused_add_multiply_add_ceil_abs_sigmoid_transpose_ceil_nn_relu_abs_tan_fast_tanh_441fa3051e35b26c_",
+                "hash": "1ac6d35b3fa8fd8f",
+                "T": "type: float32"
+            },
+            "inputs": [
+                "p0",
+                "pzx",
+                "p1",
+                "p2"
+            ],
+            "shape": [
+                64
+            ]
+        }
+    ],
+    "arg_nodes": [
+        0,
+        1,
+        2,
+        3
+    ],
+    "heads": [
+        [
+            4,
+            0,
+            0
+        ]
+    ],
+    "attrs": {
+        "dltype": [
+            "list_str",
+            [
+                "float32",
+                "float32",
+                "float32",
+                "float32",
+                "float32"
+            ]
+        ],
+        "device_index": [
+            "list_int",
+            [
+                1,
+                1,
+                1,
+                1,
+                1
+            ]
+        ],
+        "storage_id": [
+            "list_int",
+            [
+                0,
+                1,
+                2,
+                3,
+                4
+            ]
+        ],
+        "shape": [
+            "list_shape",
+            [
+                [
+                    64
+                ],
+                [
+                    64
+                ],
+                [
+                    64
+                ],
+                [
+                    64
+                ],
+                [
+                    64
+                ]
+            ]
+        ]
+    },
+    "node_row_ptr": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+    ]
+}

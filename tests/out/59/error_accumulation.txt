@@ -1,0 +1,5 @@
+=========
+59
+-chain-   3 th
+10  tvmgen_default_fused_fast_tanh_sin_round_cos_fast_tanh,7.826300477738101e-08
+

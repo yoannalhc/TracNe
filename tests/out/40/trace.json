@@ -1,0 +1,101 @@
+{
+    "0": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "x0",
+            "opindex": 0,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "x0____topo-index:0____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "x0____topo-index:0____output-num:0"
+                ]
+            }
+        },
+        "nodename": "x0",
+        "pre_topoindex": [
+            -1
+        ],
+        "topoindex": 0
+    },
+    "1": {
+        "errormessage": {
+            "error": 0.0,
+            "hash": "565ef1a0c6991991",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_sigmoid_maximum_expand_dims_fast_exp_trunc_mean",
+            "opindex": 1,
+            "params": {
+                "opt_params": [
+                    ""
+                ],
+                "unopt_params": [
+                    ""
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_sigmoid_maximum_expand_dims_fast_exp_trunc_mean____topo-index:1____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_sigmoid_maximum_expand_dims_exp_trunc_mean____topo-index:1____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_sigmoid_maximum_expand_dims_fast_exp_trunc_mean",
+        "pre_topoindex": [
+            0
+        ],
+        "topoindex": 1
+    },
+    "2": {
+        "errormessage": {
+            "error": 1.580637298274003e-07,
+            "hash": "2664827dd66f2429",
+            "layouts": [
+                "",
+                ""
+            ],
+            "node_name_hint": "tvmgen_default_fused_cos_fast_tanh",
+            "opindex": 2,
+            "params": {
+                "opt_params": [
+                    "[ 0.07061944  0.34728906  0.07061944  0.34728906  0.07061944  0.07061944\n -0.12813625  0.07061944  0.07061944  0.34728906  0.34728906  0.34728906\n  0.34728906 -0.12813625  0.34728906]"
+                ],
+                "unopt_params": [
+                    "[ 0.07061945  0.34728912  0.07061945  0.34728912  0.07061945  0.07061945\n -0.12813626  0.07061945  0.07061945  0.34728912  0.34728912  0.34728912\n  0.34728912 -0.12813626  0.34728912]"
+                ]
+            },
+            "params_keys": {
+                "opt_params_keys": [
+                    "tvmgen_default_fused_cos_fast_tanh____topo-index:2____output-num:0"
+                ],
+                "unopt_params_keys": [
+                    "tvmgen_default_fused_cos_tanh____topo-index:2____output-num:0"
+                ]
+            }
+        },
+        "nodename": "tvmgen_default_fused_cos_fast_tanh",
+        "pre_topoindex": [
+            1
+        ],
+        "topoindex": 2
+    }
+}

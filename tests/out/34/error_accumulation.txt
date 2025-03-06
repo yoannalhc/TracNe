@@ -1,0 +1,5 @@
+=========
+34
+-chain-   0 th
+1  tvmgen_default_fused_trunc_abs_cos_sigmoid_transpose_fast_tanh_nn_relu_abs,1.8094233315970359e-07
+

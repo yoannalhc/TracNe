@@ -1,0 +1,5 @@
+=========
+40
+-chain-   0 th
+2  tvmgen_default_fused_cos_fast_tanh,1.580637298274003e-07
+

@@ -1,0 +1,21 @@
+=========
+30
+-chain-   1 th
+12  tvmgen_default_fused_nn_relu_divide_add,0.4491820415822291
+14  tvmgen_default_fused_multiply,-1
+15  tvmgen_default_fused_nn_conv3d,1.2777767076875677e-07
+16  tvmgen_default_fused_sum,1.7556024040980956e-07
+18  tvmgen_default_fused_mean,1.1879261088676717e-07
+19  tvmgen_default_fused_variance,1.5617254817620083e-07
+20  tvmgen_default_fused_subtract_add_sqrt_divide_reshape,3.04267800400773e-07
+26  tvmgen_default_fused_sin_cos,6.516111035458733e-08
+27  tvmgen_default_fused_mean_1,6.173157829901747e-08
+28  tvmgen_default_fused_variance_1,1.3447226142015126e-06
+29  tvmgen_default_fused_subtract_add_sqrt_divide,1.3433288768198257e-06
+30  tvmgen_default_fused_mean_2,3.1831642360775486e-06
+31  tvmgen_default_fused_variance_2,8.970234236681406e-07
+32  tvmgen_default_fused_subtract_add_sqrt_divide_expand_dims_add_negative,1.7431709356122445e-06
+33  tvmgen_default_fused_mean_2_1,1.4605464858351425e-06
+34  tvmgen_default_fused_variance_2_1,8.940802143741022e-08
+35  tvmgen_default_fused_subtract_add_sqrt_divide_expand_dims_multiply_expand_dims_add,1.3904524135850056e-06
+

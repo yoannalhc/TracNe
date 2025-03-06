@@ -1,0 +1,6 @@
+=========
+44
+-chain-   1 th
+13  tvmgen_default_fused_fast_exp,2.227107339331508e-08
+22  tvmgen_default_fused_mean_1_1,2.227107339331508e-08
+
