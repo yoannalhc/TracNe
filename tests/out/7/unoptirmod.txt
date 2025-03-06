@@ -1,0 +1,120 @@
+#[version = "0.0.5"]
+def @main(%data : Tensor[(2, 3, 64, 16), float32] /* ty=Tensor[(2, 3, 64, 16), float32] span=from_string:3:18 */, %graph_conv_weight : Tensor[(3, 3, 3, 3), float32] /* ty=Tensor[(3, 3, 3, 3), float32] span=from_string:3:25 */, %graph_bn_gamma : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:26 */, %graph_bn_beta : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:43 */, %graph_bn_moving_mean : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:59 */, %graph_bn_moving_var : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:82 */, hash="1d80e98a40c4b674", ) -> Tensor[(2, 3, 32, 8), float32] {
+  %11 = fn (%p01: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, %p11: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, Primitive=1, hash="5e573744016ac88f") -> Tensor[(3), float32] {
+    %8 = add(%p01, 1e-05f /* ty=float32 */) /* ty=Tensor[(3), float32] */;
+    %9 = sqrt(%8) /* ty=Tensor[(3), float32] */;
+    %10 = divide(1f /* ty=float32 */, %9) /* ty=Tensor[(3), float32] */;
+    multiply(%10, %p11) /* ty=Tensor[(3), float32] */
+  } /* ty=fn (Tensor[(3), float32], Tensor[(3), float32]) -> Tensor[(3), float32] */;
+  %12 = %11(%graph_bn_moving_var, %graph_bn_gamma) /* ty=Tensor[(3), float32] */;
+  %13 = fn (%p0: Tensor[(2, 3, 64, 16), float32] /* ty=Tensor[(2, 3, 64, 16), float32] */, %p1: Tensor[(3, 3, 3, 3), float32] /* ty=Tensor[(3, 3, 3, 3), float32] */, %p2: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, %p3: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, %p4: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, Primitive=1, hash="a81c78bffe10c47b", kernel_layout="OIHW", data_layout="NCHW", out_layout="") -> Tensor[(2, 3, 32, 8), float32] {
+    %0 = nn.conv2d(%p0, %p1, strides=[2, 2], padding=[1, 1, 1, 1], channels=3, kernel_size=[3, 3]) /* ty=Tensor[(2, 3, 32, 8), float32] */;
+    %1 = expand_dims(%p2, axis=1, num_newaxis=2) /* ty=Tensor[(3, 1, 1), float32] */;
+    %2 = negative(%p3) /* ty=Tensor[(3), float32] */;
+    %3 = multiply(%2, %p2) /* ty=Tensor[(3), float32] */;
+    %4 = add(%3, %p4) /* ty=Tensor[(3), float32] */;
+    %5 = multiply(%0, %1) /* ty=Tensor[(2, 3, 32, 8), float32] */;
+    %6 = expand_dims(%4, axis=1, num_newaxis=2) /* ty=Tensor[(3, 1, 1), float32] */;
+    %7 = add(%5, %6) /* ty=Tensor[(2, 3, 32, 8), float32] */;
+    nn.relu(%7) /* ty=Tensor[(2, 3, 32, 8), float32] */
+  } /* ty=fn (Tensor[(2, 3, 64, 16), float32], Tensor[(3, 3, 3, 3), float32], Tensor[(3), float32], Tensor[(3), float32], Tensor[(3), float32]) -> Tensor[(2, 3, 32, 8), float32] */;
+  %13(%data, %graph_conv_weight, %12, %graph_bn_moving_mean, %graph_bn_beta) /* ty=Tensor[(2, 3, 32, 8), float32] */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "VirtualDevice"
+      ], 
+      "data": [2]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "15", 
+        "target": "4", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "14", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "7", 
+        "name": "6"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [12]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "0", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.16.0"}
+}

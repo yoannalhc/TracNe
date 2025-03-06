@@ -1,0 +1,128 @@
+#[version = "0.0.5"]
+def @main(%x0 : Tensor[(12, 16), float16] /* ty=Tensor[(12, 16), float16] span=from_string:4:21 */, %x1 : Tensor[(16), float16] /* ty=Tensor[(16), float16] span=from_string:5:26 */, %x2 : Tensor[(16), float16] /* ty=Tensor[(16), float16] span=from_string:5:31 */, %x3 : Tensor[(16), float16] /* ty=Tensor[(16), float16] span=from_string:8:21 */, %x4 : Tensor[(16), float16] /* ty=Tensor[(16), float16] span=from_string:9:24 */, hash="add314a543ff5c94", ) -> (Tensor[(12, 16), float16],) {
+  %10 = fn (%p01: Tensor[(12, 16), float16] /* ty=Tensor[(12, 16), float16] */, Primitive=1, hash="7a83e7f9d9bb4c77") -> Tensor[(12, 16), float16] {
+    %9 = floor(%p01) /* ty=Tensor[(12, 16), float16] */;
+    maximum(%9, %p01) /* ty=Tensor[(12, 16), float16] */
+  } /* ty=fn (Tensor[(12, 16), float16]) -> Tensor[(12, 16), float16] */;
+  %11 = %10(%x0) /* ty=Tensor[(12, 16), float16] */;
+  %12 = fn (%p02: Tensor[(12, 16), float16] /* ty=Tensor[(12, 16), float16] */, Primitive=1, hash="e1fc30d915a5f1fe") -> Tensor[(12, 1), float16] {
+    mean(%p02, axis=[1], keepdims=True) /* ty=Tensor[(12, 1), float16] */
+  } /* ty=fn (Tensor[(12, 16), float16]) -> Tensor[(12, 1), float16] */;
+  %13 = %12(%11) /* ty=Tensor[(12, 1), float16] */;
+  %14 = fn (%p03: Tensor[(12, 16), float16] /* ty=Tensor[(12, 16), float16] */, %p11: Tensor[(12, 1), float16] /* ty=Tensor[(12, 1), float16] */, Primitive=1, hash="431885cf39dd1882") -> Tensor[(12, 1), float16] {
+    variance(%p03, %p11, axis=[1], keepdims=True) /* ty=Tensor[(12, 1), float16] */
+  } /* ty=fn (Tensor[(12, 16), float16], Tensor[(12, 1), float16]) -> Tensor[(12, 1), float16] */;
+  %15 = %14(%11, %13) /* ty=Tensor[(12, 1), float16] */;
+  %16 = fn (%p0: Tensor[(12, 16), float16] /* ty=Tensor[(12, 16), float16] */, %p1: Tensor[(12, 1), float16] /* ty=Tensor[(12, 1), float16] */, %p2: Tensor[(12, 1), float16] /* ty=Tensor[(12, 1), float16] */, %p3: float16 /* ty=float16 */, %p4: Tensor[(16), float16] /* ty=Tensor[(16), float16] */, %p5: Tensor[(16), float16] /* ty=Tensor[(16), float16] */, %p6: Tensor[(16), float16] /* ty=Tensor[(16), float16] */, Primitive=1, hash="2b7e8d7e45b8117e") -> Tensor[(12, 16), float16] {
+    %0 = add(%p2, %p3) /* ty=Tensor[(12, 1), float16] */;
+    %1 = subtract(%p0, %p1) /* ty=Tensor[(12, 16), float16] */;
+    %2 = sqrt(%0) /* ty=Tensor[(12, 1), float16] */;
+    %3 = divide(%1, %2) /* ty=Tensor[(12, 16), float16] */;
+    %4 = add(%3, %p4) /* ty=Tensor[(12, 16), float16] */;
+    %5 = tan(%4) /* ty=Tensor[(12, 16), float16] */;
+    %6 = cos(%5) /* ty=Tensor[(12, 16), float16] */;
+    %7 = nn.prelu(%6, %p5) /* ty=Tensor[(12, 16), float16] */;
+    %8 = nn.bias_add(%7, %p6) /* ty=Tensor[(12, 16), float16] */;
+    exp(%8) /* ty=Tensor[(12, 16), float16] */
+  } /* ty=fn (Tensor[(12, 16), float16], Tensor[(12, 1), float16], Tensor[(12, 1), float16], float16, Tensor[(16), float16], Tensor[(16), float16], Tensor[(16), float16]) -> Tensor[(12, 16), float16] */;
+  %17 = %16(%11, %13, %15, 1.00136e-05f16 /* ty=float16 */, %x2, %x3, %x4) /* ty=Tensor[(12, 16), float16] */;
+  (%17,) /* ty=(Tensor[(12, 16), float16],) span=from_string:3:3 */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "VirtualDevice"
+      ], 
+      "data": [2]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "15", 
+        "target": "4", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "14", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "7", 
+        "name": "6"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [12]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "0", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.16.0"}
+}

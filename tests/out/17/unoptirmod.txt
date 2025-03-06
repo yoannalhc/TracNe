@@ -1,0 +1,141 @@
+#[version = "0.0.5"]
+def @main(%pzdata : Tensor[(2, 3, 64, 16), float32] /* ty=Tensor[(2, 3, 64, 16), float32] span=from_string:3:18 */, %pzgraph_conv_weight : Tensor[(3, 3, 3, 3), float32] /* ty=Tensor[(3, 3, 3, 3), float32] span=from_string:3:27 */, %pzgraph_bn_gamma : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:26 */, %pzgraph_bn_beta : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:45 */, %pzgraph_bn_moving_mean : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:63 */, %pzgraph_bn_moving_var : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:88 */, hash="932d78c89471a058", ) -> (Tensor[(2), float32],) {
+  %19 = fn (%p04: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, %p11: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, Primitive=1, hash="5e573744016ac88f") -> Tensor[(3), float32] {
+    %16 = add(%p04, 1e-05f /* ty=float32 */) /* ty=Tensor[(3), float32] */;
+    %17 = sqrt(%16) /* ty=Tensor[(3), float32] */;
+    %18 = divide(1f /* ty=float32 */, %17) /* ty=Tensor[(3), float32] */;
+    multiply(%18, %p11) /* ty=Tensor[(3), float32] */
+  } /* ty=fn (Tensor[(3), float32], Tensor[(3), float32]) -> Tensor[(3), float32] */;
+  %20 = %19(%pzgraph_bn_moving_var, %pzgraph_bn_gamma) /* ty=Tensor[(3), float32] */;
+  %21 = fn (%p03: Tensor[(2, 3, 64, 16), float32] /* ty=Tensor[(2, 3, 64, 16), float32] */, %p1: Tensor[(3, 3, 3, 3), float32] /* ty=Tensor[(3, 3, 3, 3), float32] */, %p2: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, %p3: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, %p4: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, Primitive=1, hash="a81c78bffe10c47b", kernel_layout="OIHW", data_layout="NCHW", out_layout="") -> Tensor[(2, 3, 32, 8), float32] {
+    %8 = nn.conv2d(%p03, %p1, strides=[2, 2], padding=[1, 1, 1, 1], channels=3, kernel_size=[3, 3]) /* ty=Tensor[(2, 3, 32, 8), float32] */;
+    %9 = expand_dims(%p2, axis=1, num_newaxis=2) /* ty=Tensor[(3, 1, 1), float32] */;
+    %10 = negative(%p3) /* ty=Tensor[(3), float32] */;
+    %11 = multiply(%10, %p2) /* ty=Tensor[(3), float32] */;
+    %12 = add(%11, %p4) /* ty=Tensor[(3), float32] */;
+    %13 = multiply(%8, %9) /* ty=Tensor[(2, 3, 32, 8), float32] */;
+    %14 = expand_dims(%12, axis=1, num_newaxis=2) /* ty=Tensor[(3, 1, 1), float32] */;
+    %15 = add(%13, %14) /* ty=Tensor[(2, 3, 32, 8), float32] */;
+    nn.relu(%15) /* ty=Tensor[(2, 3, 32, 8), float32] */
+  } /* ty=fn (Tensor[(2, 3, 64, 16), float32], Tensor[(3, 3, 3, 3), float32], Tensor[(3), float32], Tensor[(3), float32], Tensor[(3), float32]) -> Tensor[(2, 3, 32, 8), float32] */;
+  %22 = %21(%pzdata, %pzgraph_conv_weight, %20, %pzgraph_bn_moving_mean, %pzgraph_bn_beta) /* ty=Tensor[(2, 3, 32, 8), float32] */;
+  %23 = fn (%p02: Tensor[(2, 3, 32, 8), float32] /* ty=Tensor[(2, 3, 32, 8), float32] */, Primitive=1, hash="38753d8f31a0f8b6") -> Tensor[(2, 3), float32] {
+    sum(%p02, axis=[-1, -2]) /* ty=Tensor[(2, 3), float32] */
+  } /* ty=fn (Tensor[(2, 3, 32, 8), float32]) -> Tensor[(2, 3), float32] */;
+  %24 = %23(%22) /* ty=Tensor[(2, 3), float32] */;
+  %25 = fn (%p01: Tensor[(2, 3), float32] /* ty=Tensor[(2, 3), float32] */, Primitive=1, hash="ef2ac54a7768b14f") -> Tensor[(2), float32] {
+    %2 = minimum(%p01, %p01) /* ty=Tensor[(2, 3), float32] */;
+    %3 = sin(%2) /* ty=Tensor[(2, 3), float32] */;
+    %4 = transpose(%2, axes=[0, 1]) /* ty=Tensor[(2, 3), float32] */;
+    %5 = maximum(%3, %3) /* ty=Tensor[(2, 3), float32] */;
+    %6 = minimum(%4, %5) /* ty=Tensor[(2, 3), float32] */;
+    %7 = minimum(%6, %4) /* ty=Tensor[(2, 3), float32] */;
+    sum(%7, axis=[1]) /* ty=Tensor[(2), float32] */
+  } /* ty=fn (Tensor[(2, 3), float32]) -> Tensor[(2), float32] */;
+  %26 = %25(%24) /* ty=Tensor[(2), float32] */;
+  %27 = fn (%p0: Tensor[(2), float32] /* ty=Tensor[(2), float32] */, Primitive=1, hash="5c311a7e6aaf6b92") -> Tensor[(2), float32] {
+    %0 = nn.relu(%p0) /* ty=Tensor[(2), float32] */;
+    %1 = tan(%0) /* ty=Tensor[(2), float32] */;
+    abs(%1) /* ty=Tensor[(2), float32] */
+  } /* ty=fn (Tensor[(2), float32]) -> Tensor[(2), float32] */;
+  %28 = %27(%26) /* ty=Tensor[(2), float32] */;
+  (%28,) /* ty=(Tensor[(2), float32],) span=from_string:3:3 */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "VirtualDevice"
+      ], 
+      "data": [2]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "15", 
+        "target": "4", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "14", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "7", 
+        "name": "6"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [12]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "0", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.16.0"}
+}

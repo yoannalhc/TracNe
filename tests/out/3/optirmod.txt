@@ -1,0 +1,249 @@
+#[version = "0.0.5"]
+def @main(%x : Tensor[(16), float32] /* ty=Tensor[(16), float32] span=from_string:3:37 */, hash="495f763b3e6e9d5d", ) -> Tensor[(16), float32] {
+  %2 = fn (%p0: Tensor[(16), float32] /* ty=Tensor[(16), float32] */, %p1: Tensor[(16), float32] /* ty=Tensor[(16), float32] */, %p2: Tensor[(16), float32] /* ty=Tensor[(16), float32] */, %p3: Tensor[(16), float32] /* ty=Tensor[(16), float32] */, Primitive=1, hash="5ec222819bf77577") -> Tensor[(16), float32] {
+    %0 = add(%p0, %p1) /* ty=Tensor[(16), float32] */;
+    %1 = multiply(%p2, %0) /* ty=Tensor[(16), float32] */;
+    add(%1, %p3) /* ty=Tensor[(16), float32] */
+  } /* ty=fn (Tensor[(16), float32], Tensor[(16), float32], Tensor[(16), float32], Tensor[(16), float32]) -> Tensor[(16), float32] */;
+  %2(meta[relay.Constant][0] /* ty=Tensor[(16), float32] span=from_string:3:17 */, %x, meta[relay.Constant][1] /* ty=Tensor[(16), float32] span=from_string:4:23 */, meta[relay.Constant][2] /* ty=Tensor[(16), float32] span=from_string:5:16 */) /* ty=Tensor[(16), float32] */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "relay.Constant", 
+        "VirtualDevice"
+      ], 
+      "data": [2, 21]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3, 11, 16]
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "8", 
+        "data": "0", 
+        "span": "6", 
+        "virtual_device_": "4"
+      }
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "-1", 
+        "memory_scope": "5", 
+        "target": "0", 
+        "virtual_device_id": "-1"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Span", 
+      "attrs": {
+        "column": "17", 
+        "end_column": "35", 
+        "end_line": "3", 
+        "line": "3", 
+        "source_name": "7"
+      }
+    }, 
+    {
+      "type_key": "SourceName", 
+      "repr_str": "from_string"
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "9", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [10]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "16"
+      }
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "13", 
+        "data": "1", 
+        "span": "12", 
+        "virtual_device_": "4"
+      }
+    }, 
+    {
+      "type_key": "Span", 
+      "attrs": {
+        "column": "23", 
+        "end_column": "41", 
+        "end_line": "4", 
+        "line": "4", 
+        "source_name": "7"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "14", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [15]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "16"
+      }
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "18", 
+        "data": "2", 
+        "span": "17", 
+        "virtual_device_": "4"
+      }
+    }, 
+    {
+      "type_key": "Span", 
+      "attrs": {
+        "column": "16", 
+        "end_column": "34", 
+        "end_line": "5", 
+        "line": "5", 
+        "source_name": "7"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "19", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [20]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "16"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [22]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "34", 
+        "target": "23", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "30", 
+        "features": "32", 
+        "host": "33", 
+        "keys": "29", 
+        "kind": "24", 
+        "tag": "28"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "26", 
+        "name": "25"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [27]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [27]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [31]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "30", 
+        "features": "32", 
+        "host": "0", 
+        "keys": "29", 
+        "kind": "24", 
+        "tag": "28"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAAAQAAAAIgAQAQAAAAAAAAAEAAAAAAAAAAG8IuP7t/cj8qMmE+aC63PmRjbT91/NQ+XojiPoMY2zwQ9j0/PTlFP64UNj9zNUk/xHZXPux7sz4MSUE/jGpkPg==", 
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAAAQAAAAIgAQAQAAAAAAAAAEAAAAAAAAAAg/wQPj2xFDwqW1o/U7ZSP+n7Aj/2aVk+0sKIPdzWtz3qMK8+NmheP3jaBDyfXFk/RmUvP+gf9T7F9Gc+gZkaPw==", 
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAAAQAAAAIgAQAQAAAAAAAAAEAAAAAAAAAA82M4P8sFaT974Ng7aflvPlXDgT00XOU9BUmRPqBLxz7MGAE/J1CBPaec4T5BFyM/nUYoParh7z5+wx0/l31UPQ=="
+  ], 
+  "attrs": {"tvm_version": "0.16.0"}
+}

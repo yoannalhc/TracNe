@@ -1,0 +1,116 @@
+#[version = "0.0.5"]
+def @main(%x0 : Tensor[(15, 10), float32] /* ty=Tensor[(15, 10), float32] span=from_string:3:16 */, hash="e45cff60c567ccc6", ) -> (Tensor[(15), float32],) {
+  %6 = fn (%p01: Tensor[(15, 10), float32] /* ty=Tensor[(15, 10), float32] */, Primitive=1, hash="565ef1a0c6991991") -> Tensor[(15), float32] {
+    %1 = sigmoid(%p01) /* ty=Tensor[(15, 10), float32] */;
+    %2 = maximum(%1, %1) /* ty=Tensor[(15, 10), float32] */;
+    %3 = expand_dims(%2, axis=1, num_newaxis=0) /* ty=Tensor[(15, 10), float32] */;
+    %4 = fast_exp(%3) /* ty=Tensor[(15, 10), float32] */;
+    %5 = trunc(%4) /* ty=Tensor[(15, 10), float32] */;
+    mean(%5, axis=[1]) /* ty=Tensor[(15), float32] */
+  } /* ty=fn (Tensor[(15, 10), float32]) -> Tensor[(15), float32] */;
+  %7 = %6(%x0) /* ty=Tensor[(15), float32] */;
+  %8 = fn (%p0: Tensor[(15), float32] /* ty=Tensor[(15), float32] */, Primitive=1, hash="2664827dd66f2429") -> Tensor[(15), float32] {
+    %0 = cos(%p0) /* ty=Tensor[(15), float32] */;
+    fast_tanh(%0) /* ty=Tensor[(15), float32] */
+  } /* ty=fn (Tensor[(15), float32]) -> Tensor[(15), float32] */;
+  %9 = %8(%7) /* ty=Tensor[(15), float32] */;
+  (%9,) /* ty=(Tensor[(15), float32],) span=from_string:3:3 */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "VirtualDevice"
+      ], 
+      "data": [2]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "15", 
+        "target": "4", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "14", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "7", 
+        "name": "6"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [12]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "0", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.16.0"}
+}

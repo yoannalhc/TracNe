@@ -1,0 +1,170 @@
+#[version = "0.0.5"]
+def @main(%x : Tensor[(256, 4), float32] /* ty=Tensor[(256, 4), float32] span=from_string:3:17 */, %weight : Tensor[(3, 4), float32] /* ty=Tensor[(3, 4), float32] span=from_string:3:21 */, %in_bias : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:16 */, hash="2cdb4905964ac93b", ) -> Tensor[(256, 3), float32] {
+  %3 = fn (%p0: Tensor[(256, 4), float32] /* ty=Tensor[(256, 4), float32] */, %p1: Tensor[(3, 4), float32] /* ty=Tensor[(3, 4), float32] */, %p2: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, %p3: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, Primitive=1, hash="fb4e9856989fb845") -> Tensor[(256, 3), float32] {
+    %0 = nn.dense(%p0, %p1, units=None) /* ty=Tensor[(256, 3), float32] */;
+    %1 = add(%0, %p2) /* ty=Tensor[(256, 3), float32] */;
+    %2 = nn.relu(%1) /* ty=Tensor[(256, 3), float32] */;
+    multiply(%2, %p3) /* ty=Tensor[(256, 3), float32] */
+  } /* ty=fn (Tensor[(256, 4), float32], Tensor[(3, 4), float32], Tensor[(3), float32], Tensor[(3), float32]) -> Tensor[(256, 3), float32] */;
+  %3(%x, %weight, %in_bias, meta[relay.Constant][0] /* ty=Tensor[(3), float32] span=from_string:6:22 */) /* ty=Tensor[(256, 3), float32] */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "relay.Constant", 
+        "VirtualDevice"
+      ], 
+      "data": [2, 11]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "8", 
+        "data": "0", 
+        "span": "6", 
+        "virtual_device_": "4"
+      }
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "-1", 
+        "memory_scope": "5", 
+        "target": "0", 
+        "virtual_device_id": "-1"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Span", 
+      "attrs": {
+        "column": "22", 
+        "end_column": "40", 
+        "end_line": "6", 
+        "line": "6", 
+        "source_name": "7"
+      }
+    }, 
+    {
+      "type_key": "SourceName", 
+      "repr_str": "from_string"
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "9", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [10]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "3"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [12]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "24", 
+        "target": "13", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "20", 
+        "features": "22", 
+        "host": "23", 
+        "keys": "19", 
+        "kind": "14", 
+        "tag": "18"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "16", 
+        "name": "15"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [17]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [17]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [21]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "20", 
+        "features": "22", 
+        "host": "0", 
+        "keys": "19", 
+        "kind": "14", 
+        "tag": "18"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAAAQAAAAIgAQADAAAAAAAAAAwAAAAAAAAArsAwP6HXIj92ThI/"
+  ], 
+  "attrs": {"tvm_version": "0.16.0"}
+}

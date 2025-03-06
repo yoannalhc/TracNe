@@ -1,0 +1,144 @@
+#[version = "0.0.5"]
+def @main(%pznewx : Tensor[(4, 3), float32] /* ty=Tensor[(4, 3), float32] span=from_string:5:15 */, %pznewy : Tensor[(4, 3), float32] /* ty=Tensor[(4, 3), float32] span=from_string:3:12 */, hash="2294184557a772d5", ) -> (Tensor[(4, 4, 1), float32],) {
+  %16 = fn (%p02: Tensor[(4, 3), float32] /* ty=Tensor[(4, 3), float32] */, %p11: Tensor[(4, 3), float32] /* ty=Tensor[(4, 3), float32] */, Primitive=1, hash="f9a477ddd5f8ba55") -> Tensor[(4), float32] {
+    %13 = abs(%p02) /* ty=Tensor[(4, 3), float32] */;
+    %14 = sqrt(%13) /* ty=Tensor[(4, 3), float32] */;
+    %15 = divide(%p11, %14) /* ty=Tensor[(4, 3), float32] */;
+    sum(%15, axis=[1]) /* ty=Tensor[(4), float32] */
+  } /* ty=fn (Tensor[(4, 3), float32], Tensor[(4, 3), float32]) -> Tensor[(4), float32] */;
+  %17 = %16(%pznewy, %pznewx) /* ty=Tensor[(4), float32] */;
+  %18 = fn (%p01: Tensor[(4), float32] /* ty=Tensor[(4), float32] */, Primitive=1, hash="913cf20f42a83dcd") -> Tensor[(4), float32] {
+    %7 = tan(%p01) /* ty=Tensor[(4), float32] */;
+    %8 = nn.relu(%7) /* ty=Tensor[(4), float32] */;
+    %9 = round(%8) /* ty=Tensor[(4), float32] */;
+    %10 = ceil(%9) /* ty=Tensor[(4), float32] */;
+    %11 = exp(%10) /* ty=Tensor[(4), float32] */;
+    %12 = abs(%11) /* ty=Tensor[(4), float32] */;
+    sigmoid(%12) /* ty=Tensor[(4), float32] */
+  } /* ty=fn (Tensor[(4), float32]) -> Tensor[(4), float32] */;
+  %25 = %18(%17) /* ty=Tensor[(4), float32] */;
+  %26 = fn (%p04: Tensor[(4), float32] /* ty=Tensor[(4), float32] */, Primitive=1, hash="39d8454c9d47d3bd") -> Tensor[(4, 1, 1), float32] {
+    %20 = transpose(%p04, axes=[0]) /* ty=Tensor[(4), float32] */;
+    %21 = nn.relu(%20) /* ty=Tensor[(4), float32] */;
+    %22 = reshape(%21, newshape=[4, 1, 1]) /* ty=Tensor[(4, 1, 1), float32] */;
+    %23 = cos(%22) /* ty=Tensor[(4, 1, 1), float32] */;
+    %24 = tan(%23) /* ty=Tensor[(4, 1, 1), float32] */;
+    tanh(%24) /* ty=Tensor[(4, 1, 1), float32] */
+  } /* ty=fn (Tensor[(4), float32]) -> Tensor[(4, 1, 1), float32] */;
+  %27 = %26(%25) /* ty=Tensor[(4, 1, 1), float32] */;
+  %28 = fn (%p03: Tensor[(4, 1, 1), float32] /* ty=Tensor[(4, 1, 1), float32] */, Primitive=1, hash="a52f21e587548d27", layout="NCW", out_layout="") -> Tensor[(4, 1, 1), float32] {
+    %19 = nn.max_pool1d(%p03, pool_size=[2], padding=[1, 0], ceil_mode=True) /* ty=Tensor[(4, 1, 1), float32] */;
+    round(%19) /* ty=Tensor[(4, 1, 1), float32] */
+  } /* ty=fn (Tensor[(4, 1, 1), float32]) -> Tensor[(4, 1, 1), float32] */;
+  %29 = %28(%27) /* ty=Tensor[(4, 1, 1), float32] */;
+  %30 = fn (%p0: Tensor[(4), float32] /* ty=Tensor[(4), float32] */, %p1: Tensor[(4, 1, 1), float32] /* ty=Tensor[(4, 1, 1), float32] */, Primitive=1, hash="1059bf13d5b3aa9f") -> Tensor[(4, 4, 1), float32] {
+    %0 = tanh(%p0) /* ty=Tensor[(4), float32] */;
+    %1 = reshape(%0, newshape=[4, 1, 1]) /* ty=Tensor[(4, 1, 1), float32] */;
+    %2 = nn.batch_flatten(%1) /* ty=Tensor[(4, 1), float32] */;
+    %3 = negative(%2) /* ty=Tensor[(4, 1), float32] */;
+    %4 = subtract(%3, %3) /* ty=Tensor[(4, 1), float32] */;
+    %5 = multiply(%p1, %4) /* ty=Tensor[(4, 4, 1), float32] */;
+    %6 = cos(%5) /* ty=Tensor[(4, 4, 1), float32] */;
+    minimum(%6, %1) /* ty=Tensor[(4, 4, 1), float32] */
+  } /* ty=fn (Tensor[(4), float32], Tensor[(4, 1, 1), float32]) -> Tensor[(4, 4, 1), float32] */;
+  %31 = %30(%25, %29) /* ty=Tensor[(4, 4, 1), float32] */;
+  (%31,) /* ty=(Tensor[(4, 4, 1), float32],) span=from_string:3:3 */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "VirtualDevice"
+      ], 
+      "data": [2]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "15", 
+        "target": "4", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "14", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "7", 
+        "name": "6"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [12]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "0", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.16.0"}
+}

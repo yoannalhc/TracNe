@@ -1,8 +1,8 @@
 #[version = "0.0.5"]
-def @main(%data : Tensor[(2, 3, 16, 16), float32] /* ty=Tensor[(2, 3, 16, 16), float32] span=from_string:3:18 */, %graph_conv_weight : Tensor[(3, 3, 3, 3), float32] /* ty=Tensor[(3, 3, 3, 3), float32] span=from_string:3:25 */, %graph_bn_gamma : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:26 */, %graph_bn_beta : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:43 */, %graph_bn_moving_mean : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:59 */, %graph_bn_moving_var : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:82 */, hash="aa6b78bfb2c72a5d", src_layout="NCHW", dst_layout="NCHW3c", ) -> Tensor[(2, 3, 8, 8), float32] {
-  %2 = fn (%p02: Tensor[(2, 3, 16, 16), float32] /* ty=Tensor[(2, 3, 16, 16), float32] */, Primitive=1, hash="c93169fe34aa6fd1", src_layout="NCHW", dst_layout="NCHW3c") -> Tensor[(2, 1, 16, 16, 3), float32] {
-    layout_transform(%p02, src_layout="NCHW", dst_layout="NCHW3c") /* ty=Tensor[(2, 1, 16, 16, 3), float32] */
-  } /* ty=fn (Tensor[(2, 3, 16, 16), float32]) -> Tensor[(2, 1, 16, 16, 3), float32] */;
+def @main(%data : Tensor[(2, 3, 64, 16), float32] /* ty=Tensor[(2, 3, 64, 16), float32] span=from_string:3:18 */, %graph_conv_weight : Tensor[(3, 3, 3, 3), float32] /* ty=Tensor[(3, 3, 3, 3), float32] span=from_string:3:25 */, %graph_bn_gamma : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:26 */, %graph_bn_beta : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:43 */, %graph_bn_moving_mean : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:59 */, %graph_bn_moving_var : Tensor[(3), float32] /* ty=Tensor[(3), float32] span=from_string:4:82 */, hash="c30a98901cce3406", src_layout="NCHW", dst_layout="NCHW3c", ) -> Tensor[(2, 3, 32, 8), float32] {
+  %2 = fn (%p02: Tensor[(2, 3, 64, 16), float32] /* ty=Tensor[(2, 3, 64, 16), float32] */, Primitive=1, hash="cb80f6757accf20b", src_layout="NCHW", dst_layout="NCHW3c") -> Tensor[(2, 1, 64, 16, 3), float32] {
+    layout_transform(%p02, src_layout="NCHW", dst_layout="NCHW3c") /* ty=Tensor[(2, 1, 64, 16, 3), float32] */
+  } /* ty=fn (Tensor[(2, 3, 64, 16), float32]) -> Tensor[(2, 1, 64, 16, 3), float32] */;
   %10 = fn (%p04: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, %p12: Tensor[(3), float32] /* ty=Tensor[(3), float32] */, Primitive=1, hash="5e573744016ac88f") -> Tensor[(3), float32] {
     %7 = add(%p04, 1e-05f /* ty=float32 */) /* ty=Tensor[(3), float32] */;
     %8 = sqrt(%7) /* ty=Tensor[(3), float32] */;
@@ -25,19 +25,19 @@ def @main(%data : Tensor[(2, 3, 16, 16), float32] /* ty=Tensor[(2, 3, 16, 16), f
     %17 = expand_dims(%16, axis=0) /* ty=Tensor[(1, 3, 1, 1), float32] */;
     layout_transform(%17, src_layout="NCHW", dst_layout="NCHW3c") /* ty=Tensor[(1, 1, 1, 1, 3), float32] */
   } /* ty=fn (Tensor[(3), float32], Tensor[(3), float32], Tensor[(3), float32]) -> Tensor[(1, 1, 1, 1, 3), float32] */;
-  %19 = %2(%data) /* ty=Tensor[(2, 1, 16, 16, 3), float32] */;
+  %19 = %2(%data) /* ty=Tensor[(2, 1, 64, 16, 3), float32] */;
   %20 = %12(%11, %graph_conv_weight) /* ty=Tensor[(1, 1, 3, 3, 3, 3), float32] */;
   %21 = %18(%graph_bn_moving_mean, %11, %graph_bn_beta) /* ty=Tensor[(1, 1, 1, 1, 3), float32] */;
-  %22 = fn (%p01: Tensor[(2, 1, 16, 16, 3), float32] /* ty=Tensor[(2, 1, 16, 16, 3), float32] */, %p1: Tensor[(1, 1, 3, 3, 3, 3), float32] /* ty=Tensor[(1, 1, 3, 3, 3, 3), float32] */, %p2: Tensor[(1, 1, 1, 1, 3), float32] /* ty=Tensor[(1, 1, 1, 1, 3), float32] */, Primitive=1, hash="20fa16e10d2f1255", kernel_layout="OIHW3i3o", data_layout="NCHW3c", out_layout="NCHW3c") -> Tensor[(2, 1, 8, 8, 3), float32] {
-    %0 = nn.contrib_conv2d_NCHWc(%p01, %p1, strides=[2, 2], padding=[1, 1, 1, 1], channels=3, kernel_size=[3, 3], data_layout="NCHW3c", kernel_layout="OIHW3i3o", out_layout="NCHW3c") /* ty=Tensor[(2, 1, 8, 8, 3), float32] */;
-    %1 = add(%0, %p2) /* ty=Tensor[(2, 1, 8, 8, 3), float32] */;
-    nn.relu(%1) /* ty=Tensor[(2, 1, 8, 8, 3), float32] */
-  } /* ty=fn (Tensor[(2, 1, 16, 16, 3), float32], Tensor[(1, 1, 3, 3, 3, 3), float32], Tensor[(1, 1, 1, 1, 3), float32]) -> Tensor[(2, 1, 8, 8, 3), float32] */;
-  %23 = %22(%19, %20, %21) /* ty=Tensor[(2, 1, 8, 8, 3), float32] */;
-  %24 = fn (%p0: Tensor[(2, 1, 8, 8, 3), float32] /* ty=Tensor[(2, 1, 8, 8, 3), float32] */, Primitive=1, hash="df9ecbef13647c69", src_layout="NCHW3c", dst_layout="NCHW") -> Tensor[(2, 3, 8, 8), float32] {
-    layout_transform(%p0, src_layout="NCHW3c", dst_layout="NCHW") /* ty=Tensor[(2, 3, 8, 8), float32] */
-  } /* ty=fn (Tensor[(2, 1, 8, 8, 3), float32]) -> Tensor[(2, 3, 8, 8), float32] */;
-  %24(%23) /* ty=Tensor[(2, 3, 8, 8), float32] */
+  %22 = fn (%p01: Tensor[(2, 1, 64, 16, 3), float32] /* ty=Tensor[(2, 1, 64, 16, 3), float32] */, %p1: Tensor[(1, 1, 3, 3, 3, 3), float32] /* ty=Tensor[(1, 1, 3, 3, 3, 3), float32] */, %p2: Tensor[(1, 1, 1, 1, 3), float32] /* ty=Tensor[(1, 1, 1, 1, 3), float32] */, Primitive=1, hash="2b6070eec18da712", kernel_layout="OIHW3i3o", data_layout="NCHW3c", out_layout="NCHW3c") -> Tensor[(2, 1, 32, 8, 3), float32] {
+    %0 = nn.contrib_conv2d_NCHWc(%p01, %p1, strides=[2, 2], padding=[1, 1, 1, 1], channels=3, kernel_size=[3, 3], data_layout="NCHW3c", kernel_layout="OIHW3i3o", out_layout="NCHW3c") /* ty=Tensor[(2, 1, 32, 8, 3), float32] */;
+    %1 = add(%0, %p2) /* ty=Tensor[(2, 1, 32, 8, 3), float32] */;
+    nn.relu(%1) /* ty=Tensor[(2, 1, 32, 8, 3), float32] */
+  } /* ty=fn (Tensor[(2, 1, 64, 16, 3), float32], Tensor[(1, 1, 3, 3, 3, 3), float32], Tensor[(1, 1, 1, 1, 3), float32]) -> Tensor[(2, 1, 32, 8, 3), float32] */;
+  %23 = %22(%19, %20, %21) /* ty=Tensor[(2, 1, 32, 8, 3), float32] */;
+  %24 = fn (%p0: Tensor[(2, 1, 32, 8, 3), float32] /* ty=Tensor[(2, 1, 32, 8, 3), float32] */, Primitive=1, hash="e827aef1fa6e1ea8", src_layout="NCHW3c", dst_layout="NCHW") -> Tensor[(2, 3, 32, 8), float32] {
+    layout_transform(%p0, src_layout="NCHW3c", dst_layout="NCHW") /* ty=Tensor[(2, 3, 32, 8), float32] */
+  } /* ty=fn (Tensor[(2, 1, 32, 8, 3), float32]) -> Tensor[(2, 3, 32, 8), float32] */;
+  %24(%23) /* ty=Tensor[(2, 3, 32, 8), float32] */
 }
 
 #[metadata]

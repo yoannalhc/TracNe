@@ -1,0 +1,241 @@
+#[version = "0.0.5"]
+def @main(%x : Tensor[(2, 4, 160, 10, 10), float32] /* ty=Tensor[(2, 4, 160, 10, 10), float32] span=from_string:3:18 */, %weight : Tensor[(2, 4, 3, 3, 3), float32] /* ty=Tensor[(2, 4, 3, 3, 3), float32] span=from_string:6:17 */, %in_bias : Tensor[(4, 1, 1, 1), float32] /* ty=Tensor[(4, 1, 1, 1), float32] span=from_string:5:16 */, hash="f2aeb380bdb18e4c", ) -> Tensor[(2, 2, 160, 10, 10), float32] {
+  %2 = fn (%p01: Tensor[(2, 4, 160, 10, 10), float32] /* ty=Tensor[(2, 4, 160, 10, 10), float32] */, %p11: Tensor[(4, 1, 1, 1), float32] /* ty=Tensor[(4, 1, 1, 1), float32] */, %p2: Tensor[(4, 1, 1, 1), float32] /* ty=Tensor[(4, 1, 1, 1), float32] */, Primitive=1, hash="8573e0a3471f62c3") -> Tensor[(2, 4, 160, 10, 10), float32] {
+    %0 = nn.relu(%p01) /* ty=Tensor[(2, 4, 160, 10, 10), float32] */;
+    %1 = divide(%p11, %p2) /* ty=Tensor[(4, 1, 1, 1), float32] */;
+    add(%0, %1) /* ty=Tensor[(2, 4, 160, 10, 10), float32] */
+  } /* ty=fn (Tensor[(2, 4, 160, 10, 10), float32], Tensor[(4, 1, 1, 1), float32], Tensor[(4, 1, 1, 1), float32]) -> Tensor[(2, 4, 160, 10, 10), float32] */;
+  %3 = fn (%p02: Tensor[(2, 4, 3, 3, 3), float32] /* ty=Tensor[(2, 4, 3, 3, 3), float32] */, %p12: Tensor[(4, 1, 1, 1), float32] /* ty=Tensor[(4, 1, 1, 1), float32] */, Primitive=1, hash="49e4abc5aa419f27") -> Tensor[(2, 4, 3, 3, 3), float32] {
+    multiply(%p02, %p12) /* ty=Tensor[(2, 4, 3, 3, 3), float32] */
+  } /* ty=fn (Tensor[(2, 4, 3, 3, 3), float32], Tensor[(4, 1, 1, 1), float32]) -> Tensor[(2, 4, 3, 3, 3), float32] */;
+  %4 = %2(%x, %in_bias, meta[relay.Constant][0] /* ty=Tensor[(4, 1, 1, 1), float32] */) /* ty=Tensor[(2, 4, 160, 10, 10), float32] */;
+  %5 = %3(%weight, meta[relay.Constant][1] /* ty=Tensor[(4, 1, 1, 1), float32] */) /* ty=Tensor[(2, 4, 3, 3, 3), float32] */;
+  %6 = fn (%p0: Tensor[(2, 4, 160, 10, 10), float32] /* ty=Tensor[(2, 4, 160, 10, 10), float32] */, %p1: Tensor[(2, 4, 3, 3, 3), float32] /* ty=Tensor[(2, 4, 3, 3, 3), float32] */, Primitive=1, hash="0a54a12211d2622e", kernel_layout="OIDHW", data_layout="NCDHW", out_layout="") -> Tensor[(2, 2, 160, 10, 10), float32] {
+    nn.conv3d(%p0, %p1, padding=[1, 1, 1, 1, 1, 1], channels=2, kernel_size=[3, 3, 3]) /* ty=Tensor[(2, 2, 160, 10, 10), float32] */
+  } /* ty=fn (Tensor[(2, 4, 160, 10, 10), float32], Tensor[(2, 4, 3, 3, 3), float32]) -> Tensor[(2, 2, 160, 10, 10), float32] */;
+  %6(%4, %5) /* ty=Tensor[(2, 2, 160, 10, 10), float32] */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "relay.Constant", 
+        "VirtualDevice"
+      ], 
+      "data": [2, 19]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3, 12]
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "6", 
+        "data": "0", 
+        "span": "0", 
+        "virtual_device_": "4"
+      }
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "-1", 
+        "memory_scope": "5", 
+        "target": "0", 
+        "virtual_device_id": "-1"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "7", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8, 9, 10, 11]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "4"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "relay.Constant", 
+      "attrs": {
+        "_checked_type_": "13", 
+        "data": "1", 
+        "span": "0", 
+        "virtual_device_": "4"
+      }
+    }, 
+    {
+      "type_key": "relay.TensorType", 
+      "attrs": {
+        "dtype": "float32", 
+        "shape": "14", 
+        "span": "0"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [15, 16, 17, 18]
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "4"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "IntImm", 
+      "attrs": {
+        "dtype": "int32", 
+        "span": "0", 
+        "value": "1"
+      }
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [20]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "32", 
+        "target": "21", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "28", 
+        "features": "30", 
+        "host": "31", 
+        "keys": "27", 
+        "kind": "22", 
+        "tag": "26"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "24", 
+        "name": "23"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [25]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [25]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [29]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "28", 
+        "features": "30", 
+        "host": "0", 
+        "keys": "27", 
+        "kind": "22", 
+        "tag": "26"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAABAAAAAIgAQAEAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAABAAAAAAAAAA3vgGP4E0fj8NzD4/d655Pw==", 
+    "P6G0lvBAXt0AAAAAAAAAAAEAAAAAAAAABAAAAAIgAQAEAAAAAAAAAAEAAAAAAAAAAQAAAAAAAAABAAAAAAAAABAAAAAAAAAA3vgGP4E0fj8NzD4/d655Pw=="
+  ], 
+  "attrs": {"tvm_version": "0.16.0"}
+}

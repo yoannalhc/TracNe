@@ -1,0 +1,223 @@
+#[version = "0.0.5"]
+def @main(%x0 : Tensor[(20, 14), float16] /* ty=Tensor[(20, 14), float16] span=from_string:3:23 */, %x1 : Tensor[(1), float16] /* ty=Tensor[(1), float16] span=from_string:6:26 */, %x2 : Tensor[(1), float16] /* ty=Tensor[(1), float16] span=from_string:6:31 */, %x3 : Tensor[(1), float16] /* ty=Tensor[(1), float16] span=from_string:10:24 */, %x4 : Tensor[(1), float16] /* ty=Tensor[(1), float16] span=from_string:23:26 */, %x5 : Tensor[(14), float16] /* ty=Tensor[(14), float16] span=from_string:27:28 */, %x6 : Tensor[(14), float16] /* ty=Tensor[(14), float16] span=from_string:27:33 */, %x7 : Tensor[(20), float16] /* ty=Tensor[(20), float16] span=from_string:31:28 */, %x8 : Tensor[(20), float16] /* ty=Tensor[(20), float16] span=from_string:31:33 */, hash="e3f4bff9ce768cf5", ) -> (Tensor[(20, 20, 14), float16],) {
+  %17 = fn (%p06: Tensor[(20, 14), float16] /* ty=Tensor[(20, 14), float16] */, Primitive=1, hash="b83f8660a440cff3") -> Tensor[(20, 14), float16] {
+    multiply(%p06, %p06) /* ty=Tensor[(20, 14), float16] */
+  } /* ty=fn (Tensor[(20, 14), float16]) -> Tensor[(20, 14), float16] */;
+  %18 = %17(%x0) /* ty=Tensor[(20, 14), float16] */;
+  %19 = fn (%p05: Tensor[(20, 14), float16] /* ty=Tensor[(20, 14), float16] */, Primitive=1, relay.reshape_only=1, hash="e6603a16b6131945") -> Tensor[(20, 1, 14), float16] {
+    reshape(%p05, newshape=[20, 1, 14]) /* ty=Tensor[(20, 1, 14), float16] */
+  } /* ty=fn (Tensor[(20, 14), float16]) -> Tensor[(20, 1, 14), float16] */;
+  %20 = %19(%18) /* ty=Tensor[(20, 1, 14), float16] */;
+  %21 = fn (%p04: Tensor[(20, 1, 14), float16] /* ty=Tensor[(20, 1, 14), float16] */, Primitive=1, hash="26a0047c0f32c81a", layout="NCW", out_layout="") -> Tensor[(20, 1, 1), float16] {
+    nn.adaptive_max_pool1d(%p04, output_size=[1]) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 14), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %22 = %21(%20) /* ty=Tensor[(20, 1, 1), float16] */;
+  %23 = fn (%p03: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, %p12: Tensor[(1), float16] /* ty=Tensor[(1), float16] */, %p22: Tensor[(20, 14), float16] /* ty=Tensor[(20, 14), float16] */, Primitive=1, hash="e40a5ab8a3d2180b") -> Tensor[(20, 14), float16] {
+    %12 = nn.leaky_relu(%p03, alpha=0.767326f) /* ty=Tensor[(20, 1, 1), float16] */;
+    %13 = reshape(%12, newshape=[20, 1]) /* ty=Tensor[(20, 1), float16] */;
+    %14 = fast_tanh(%13) /* ty=Tensor[(20, 1), float16] */;
+    %15 = add(%14, %p12) /* ty=Tensor[(20, 1), float16] */;
+    %16 = add(%15, %14) /* ty=Tensor[(20, 1), float16] */;
+    multiply(%p22, %16) /* ty=Tensor[(20, 14), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16], Tensor[(1), float16], Tensor[(20, 14), float16]) -> Tensor[(20, 14), float16] */;
+  %24 = %23(%22, %x4, %18) /* ty=Tensor[(20, 14), float16] */;
+  %25 = fn (%p07: Tensor[(20, 14), float16] /* ty=Tensor[(20, 14), float16] */, Primitive=1, hash="0bb811fae94fd3e1") -> Tensor[(20, 1), float16] {
+    mean(%p07, axis=[1], keepdims=True) /* ty=Tensor[(20, 1), float16] */
+  } /* ty=fn (Tensor[(20, 14), float16]) -> Tensor[(20, 1), float16] */;
+  %26 = %25(%24) /* ty=Tensor[(20, 1), float16] */;
+  %27 = fn (%p08: Tensor[(20, 14), float16] /* ty=Tensor[(20, 14), float16] */, %p13: Tensor[(20, 1), float16] /* ty=Tensor[(20, 1), float16] */, Primitive=1, hash="66c2801515d6e996") -> Tensor[(20, 1), float16] {
+    variance(%p08, %p13, axis=[1], keepdims=True) /* ty=Tensor[(20, 1), float16] */
+  } /* ty=fn (Tensor[(20, 14), float16], Tensor[(20, 1), float16]) -> Tensor[(20, 1), float16] */;
+  %40 = fn (%p018: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, relay.reshape_only=1, hash="f10b9919573d61fb") -> Tensor[(20, 1, 1, 1), float16] {
+    reshape(%p018, newshape=[20, 1, 1, 1]) /* ty=Tensor[(20, 1, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1, 1), float16] */;
+  %41 = %40(%22) /* ty=Tensor[(20, 1, 1, 1), float16] */;
+  %42 = fn (%p019: Tensor[(20, 1, 1, 1), float16] /* ty=Tensor[(20, 1, 1, 1), float16] */, Primitive=1, hash="349bda0e642c64aa") -> Tensor[(20, 1, 1, 1), float16] {
+    mean(%p019, axis=[2, 3], keepdims=True) /* ty=Tensor[(20, 1, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1, 1), float16]) -> Tensor[(20, 1, 1, 1), float16] */;
+  %43 = %42(%41) /* ty=Tensor[(20, 1, 1, 1), float16] */;
+  %44 = fn (%p020: Tensor[(20, 1, 1, 1), float16] /* ty=Tensor[(20, 1, 1, 1), float16] */, %p16: Tensor[(20, 1, 1, 1), float16] /* ty=Tensor[(20, 1, 1, 1), float16] */, Primitive=1, hash="21cc294682e0856c") -> Tensor[(20, 1, 1, 1), float16] {
+    variance(%p020, %p16, axis=[2, 3], keepdims=True) /* ty=Tensor[(20, 1, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1, 1), float16], Tensor[(20, 1, 1, 1), float16]) -> Tensor[(20, 1, 1, 1), float16] */;
+  %45 = %44(%41, %43) /* ty=Tensor[(20, 1, 1, 1), float16] */;
+  %46 = fn (%p017: Tensor[(20, 1, 1, 1), float16] /* ty=Tensor[(20, 1, 1, 1), float16] */, %p15: Tensor[(20, 1, 1, 1), float16] /* ty=Tensor[(20, 1, 1, 1), float16] */, %p23: Tensor[(20, 1, 1, 1), float16] /* ty=Tensor[(20, 1, 1, 1), float16] */, %p32: float16 /* ty=float16 */, %p42: Tensor[(1), float16] /* ty=Tensor[(1), float16] */, Primitive=1, hash="f6a74bfe77f5cbe3") -> Tensor[(20, 1, 1), float16] {
+    %34 = add(%p23, %p32) /* ty=Tensor[(20, 1, 1, 1), float16] */;
+    %35 = subtract(%p017, %p15) /* ty=Tensor[(20, 1, 1, 1), float16] */;
+    %36 = sqrt(%34) /* ty=Tensor[(20, 1, 1, 1), float16] */;
+    %37 = divide(%35, %36) /* ty=Tensor[(20, 1, 1, 1), float16] */;
+    %38 = reshape(%37, newshape=[20, 1, 1]) /* ty=Tensor[(20, 1, 1), float16] */;
+    %39 = expand_dims(%p42, axis=1) /* ty=Tensor[(1, 1), float16] */;
+    add(%38, %39) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1, 1), float16], Tensor[(20, 1, 1, 1), float16], Tensor[(20, 1, 1, 1), float16], float16, Tensor[(1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %47 = %46(%41, %43, %45, 1.00136e-05f16 /* ty=float16 */, %x2) /* ty=Tensor[(20, 1, 1), float16] */;
+  %48 = fn (%p016: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="c169502d8029a0a6", layout="NCW", out_layout="") -> Tensor[(20, 1, 1), float16] {
+    %33 = nn.avg_pool1d(%p016, pool_size=[3], strides=[2], padding=[1, 2]) /* ty=Tensor[(20, 1, 1), float16] */;
+    nn.leaky_relu(%33, alpha=0.236287f) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %49 = %48(%47) /* ty=Tensor[(20, 1, 1), float16] */;
+  %50 = fn (%p015: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="901cde06d6af1ac0") -> Tensor[(20, 1, 1), float16] {
+    max(%p015, axis=[1], keepdims=True) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %51 = %50(%49) /* ty=Tensor[(20, 1, 1), float16] */;
+  %52 = fn (%p014: Tensor[(1), float16] /* ty=Tensor[(1), float16] */, %p14: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="a70bdd03cb4a5aa5") -> Tensor[(20, 1, 1), float16] {
+    %32 = expand_dims(%p014, axis=1) /* ty=Tensor[(1, 1), float16] */;
+    add(%p14, %32) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(1), float16], Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %53 = %52(%x3, %51) /* ty=Tensor[(20, 1, 1), float16] */;
+  %54 = fn (%p013: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="4921cb622a8ed55b") -> Tensor[(20, 1, 1), float16] {
+    %30 = sigmoid(%p013) /* ty=Tensor[(20, 1, 1), float16] */;
+    %31 = expand_dims(%30, axis=2, num_newaxis=0) /* ty=Tensor[(20, 1, 1), float16] */;
+    ceil(%31) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %55 = %54(%53) /* ty=Tensor[(20, 1, 1), float16] */;
+  %56 = fn (%p012: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="fd389fcf6547cdb4", layout="NCW", out_layout="") -> Tensor[(20, 1, 1), float16] {
+    %29 = nn.max_pool1d(%p012, pool_size=[3], strides=[2], padding=[1, 1], ceil_mode=True) /* ty=Tensor[(20, 1, 1), float16] */;
+    expand_dims(%29, axis=1, num_newaxis=0) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %57 = %56(%55) /* ty=Tensor[(20, 1, 1), float16] */;
+  %58 = fn (%p011: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="ca3ce6adbae47cfd") -> Tensor[(20, 1, 1), float16] {
+    min(%p011, axis=[1], keepdims=True) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %59 = %58(%57) /* ty=Tensor[(20, 1, 1), float16] */;
+  %60 = fn (%p010: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="bebaedfa20caeaaf") -> Tensor[(20, 1, 1), float16] {
+    tan(%p010) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %61 = %60(%59) /* ty=Tensor[(20, 1, 1), float16] */;
+  %62 = fn (%p09: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="6528b57c5ee0d464", layout="NCW", out_layout="") -> Tensor[(20, 1, 1), float16] {
+    %28 = nn.adaptive_avg_pool1d(%p09, output_size=[1]) /* ty=Tensor[(20, 1, 1), float16] */;
+    nn.relu(%28) /* ty=Tensor[(20, 1, 1), float16] */
+  } /* ty=fn (Tensor[(20, 1, 1), float16]) -> Tensor[(20, 1, 1), float16] */;
+  %63 = %27(%24, %26) /* ty=Tensor[(20, 1), float16] */;
+  %64 = %62(%61) /* ty=Tensor[(20, 1, 1), float16] */;
+  %65 = fn (%p02: Tensor[(20, 14), float16] /* ty=Tensor[(20, 14), float16] */, %p11: Tensor[(20, 1), float16] /* ty=Tensor[(20, 1), float16] */, %p21: Tensor[(20, 1), float16] /* ty=Tensor[(20, 1), float16] */, %p31: float16 /* ty=float16 */, %p41: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, %p51: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="426d45b8ed14e04f") -> Tensor[(20, 20, 14), float16] {
+    %6 = add(%p21, %p31) /* ty=Tensor[(20, 1), float16] */;
+    %7 = subtract(%p02, %p11) /* ty=Tensor[(20, 14), float16] */;
+    %8 = sqrt(%6) /* ty=Tensor[(20, 1), float16] */;
+    %9 = divide(%7, %8) /* ty=Tensor[(20, 14), float16] */;
+    %10 = expand_dims(%9, axis=0) /* ty=Tensor[(1, 20, 14), float16] */;
+    %11 = multiply(%p41, %10) /* ty=Tensor[(20, 20, 14), float16] */;
+    add(%11, %p51) /* ty=Tensor[(20, 20, 14), float16] */
+  } /* ty=fn (Tensor[(20, 14), float16], Tensor[(20, 1), float16], Tensor[(20, 1), float16], float16, Tensor[(20, 1, 1), float16], Tensor[(20, 1, 1), float16]) -> Tensor[(20, 20, 14), float16] */;
+  %66 = %65(%24, %26, %63, 1.00136e-05f16 /* ty=float16 */, %64, %55) /* ty=Tensor[(20, 20, 14), float16] */;
+  %67 = fn (%p01: Tensor[(20, 20, 14), float16] /* ty=Tensor[(20, 20, 14), float16] */, Primitive=1, hash="54847a57ff8d010b") -> Tensor[(20, 20, 14), float16] {
+    nn.fast_softmax(%p01, axis=1) /* ty=Tensor[(20, 20, 14), float16] */
+  } /* ty=fn (Tensor[(20, 20, 14), float16]) -> Tensor[(20, 20, 14), float16] */;
+  %68 = %67(%66) /* ty=Tensor[(20, 20, 14), float16] */;
+  %69 = fn (%p021: Tensor[(20, 20, 14), float16] /* ty=Tensor[(20, 20, 14), float16] */, Primitive=1, hash="e013c3e78cccd3b3") -> Tensor[(20, 1, 14), float16] {
+    mean(%p021, axis=[1], keepdims=True) /* ty=Tensor[(20, 1, 14), float16] */
+  } /* ty=fn (Tensor[(20, 20, 14), float16]) -> Tensor[(20, 1, 14), float16] */;
+  %70 = %69(%68) /* ty=Tensor[(20, 1, 14), float16] */;
+  %71 = fn (%p022: Tensor[(20, 20, 14), float16] /* ty=Tensor[(20, 20, 14), float16] */, %p17: Tensor[(20, 1, 14), float16] /* ty=Tensor[(20, 1, 14), float16] */, Primitive=1, hash="8e2e71616285e74f") -> Tensor[(20, 1, 14), float16] {
+    variance(%p022, %p17, axis=[1], keepdims=True) /* ty=Tensor[(20, 1, 14), float16] */
+  } /* ty=fn (Tensor[(20, 20, 14), float16], Tensor[(20, 1, 14), float16]) -> Tensor[(20, 1, 14), float16] */;
+  %72 = %71(%68, %70) /* ty=Tensor[(20, 1, 14), float16] */;
+  %73 = fn (%p0: Tensor[(20, 20, 14), float16] /* ty=Tensor[(20, 20, 14), float16] */, %p1: Tensor[(20, 1, 14), float16] /* ty=Tensor[(20, 1, 14), float16] */, %p2: Tensor[(20, 1, 14), float16] /* ty=Tensor[(20, 1, 14), float16] */, %p3: float16 /* ty=float16 */, %p4: Tensor[(20), float16] /* ty=Tensor[(20), float16] */, %p5: Tensor[(20, 1, 1), float16] /* ty=Tensor[(20, 1, 1), float16] */, Primitive=1, hash="754fb6a2a0061cb7") -> Tensor[(20, 20, 14), float16] {
+    %0 = add(%p2, %p3) /* ty=Tensor[(20, 1, 14), float16] */;
+    %1 = subtract(%p0, %p1) /* ty=Tensor[(20, 20, 14), float16] */;
+    %2 = sqrt(%0) /* ty=Tensor[(20, 1, 14), float16] */;
+    %3 = divide(%1, %2) /* ty=Tensor[(20, 20, 14), float16] */;
+    %4 = expand_dims(%p4, axis=1) /* ty=Tensor[(20, 1), float16] */;
+    %5 = add(%3, %4) /* ty=Tensor[(20, 20, 14), float16] */;
+    divide(%5, %p5) /* ty=Tensor[(20, 20, 14), float16] */
+  } /* ty=fn (Tensor[(20, 20, 14), float16], Tensor[(20, 1, 14), float16], Tensor[(20, 1, 14), float16], float16, Tensor[(20), float16], Tensor[(20, 1, 1), float16]) -> Tensor[(20, 20, 14), float16] */;
+  %74 = %73(%68, %70, %72, 1.00136e-05f16 /* ty=float16 */, %x8, %53) /* ty=Tensor[(20, 20, 14), float16] */;
+  (%74,) /* ty=(Tensor[(20, 20, 14), float16],) span=from_string:3:3 */
+}
+
+#[metadata]
+{
+  "root": 1, 
+  "nodes": [
+    {
+      "type_key": ""
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "VirtualDevice"
+      ], 
+      "data": [2]
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [3]
+    }, 
+    {
+      "type_key": "VirtualDevice", 
+      "attrs": {
+        "device_type_int": "1", 
+        "memory_scope": "15", 
+        "target": "4", 
+        "virtual_device_id": "0"
+      }
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "14", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "TargetKind", 
+      "attrs": {
+        "default_device_type": "1", 
+        "default_keys": "7", 
+        "name": "6"
+      }
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "llvm"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "cpu"
+    }, 
+    {
+      "type_key": "runtime.String"
+    }, 
+    {
+      "type_key": "Array", 
+      "data": [8]
+    }, 
+    {
+      "type_key": "Map", 
+      "keys": [
+        "mtriple"
+      ], 
+      "data": [12]
+    }, 
+    {
+      "type_key": "runtime.String", 
+      "repr_str": "x86_64-unknown-linux-gnu"
+    }, 
+    {
+      "type_key": "Map"
+    }, 
+    {
+      "type_key": "Target", 
+      "attrs": {
+        "attrs": "11", 
+        "features": "13", 
+        "host": "0", 
+        "keys": "10", 
+        "kind": "5", 
+        "tag": "9"
+      }
+    }, 
+    {
+      "type_key": "runtime.String"
+    }
+  ], 
+  "b64ndarrays": [], 
+  "attrs": {"tvm_version": "0.16.0"}
+}
